@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="车机ADB WebUSB工具箱 本地调试版">
+    <meta name="description" content="车机ADB工具箱｜WebUSB调试工具">
     <title>车机ADB工具箱｜WebUSB调试工具</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
     <style>
@@ -12,7 +12,6 @@ body {
     margin: 0;
     background-color: #f5f5f5;
 }
-
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -21,7 +20,6 @@ body {
     border-radius: 0 0 8px 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
 h3 {
     color: #333;
     margin-bottom: 15px;
@@ -30,7 +28,6 @@ h4{
     color:#222;
     margin:0 0 12px;
 }
-
 .warning {
     background-color: #ffebee;
     color: #c62828;
@@ -38,14 +35,12 @@ h4{
     border-radius: 4px;
     margin-bottom: 20px;
 }
-
 .browser-info {
     background-color: #f3e5f5;
     padding: 15px;
     border-radius: 4px;
     margin-bottom: 20px;
 }
-
 .btn {
     padding: 10px 20px;
     border: none;
@@ -54,39 +49,32 @@ h4{
     font-size: 14px;
     margin-right: 10px;
 }
-
 .btn-connect {
     background-color: #4caf50;
     color: white;
 }
-
 .btn-disconnect {
     background-color: #f44336;
     color: white;
 }
-
 .status {
     margin-top: 20px;
     padding: 10px;
     background-color: #e3f2fd;
     border-radius: 4px;
 }
-
 .tip {
     margin-top: 20px;
     font-size: 14px;
     color: #666;
 }
-
 a {
     color: #1976d2;
     text-decoration: none;
 }
-
 a:hover {
     text-decoration: underline;
 }
-
 /* ADB Section Styles */
 .adb-section {
     margin: 20px 0;
@@ -94,14 +82,12 @@ a:hover {
     padding: 15px;
     border-radius: 8px;
 }
-
 .adb-tip {
     font-size: 14px;
     color: #333;
     margin-bottom: 15px;
     font-weight: bold;
 }
-
 .adb-buttons {
     margin-bottom: 10px;
     line-height: 40px;
@@ -109,18 +95,15 @@ a:hover {
     flex-wrap: wrap;
     gap: 10px;
 }
-
 .adb-btn {
     background-color: #4caf50;
     color: white;
     margin: 5px 5px 5px 0;
     vertical-align: middle;
 }
-
 .adb-port {
     margin-top: 15px;
 }
-
 .adb-port input {
     padding: 8px 12px;
     border: 1px solid #ddd;
@@ -128,7 +111,6 @@ a:hover {
     width: 200px;
     margin-right: 10px;
 }
-
 /* Progress and Toast Styles */
 .progress {
     margin: 20px 0;
@@ -138,7 +120,6 @@ a:hover {
     border-radius: 4px;
     box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
 }
-
 .progress-bar {
     float: left;
     width: 100%;
@@ -151,21 +132,17 @@ a:hover {
     box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
     transition: width .6s ease;
 }
-
 .progress-striped .progress-bar {
     background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
     background-size: 40px 40px;
 }
-
 .progress.active .progress-bar {
     animation: progress-bar-stripes 1s linear infinite;
 }
-
 @keyframes progress-bar-stripes {
     from { background-position: 40px 0; }
     to { background-position: 0 0; }
 }
-
 /* Toast Styles */
 .toast {
     position: fixed;
@@ -181,12 +158,10 @@ a:hover {
     transition: opacity 0.5s;
     display: none;
 }
-
 #downloading-toast {
     width: 300px;
     text-align: center;
 }
-
 #download-progress {
     width: 100%;
     height: 20px;
@@ -195,24 +170,20 @@ a:hover {
     overflow: hidden;
     margin: 10px 0;
 }
-
 #download-progress-bar {
     height: 100%;
     background-color: #4caf50;
     width: 0%;
     transition: width 0.3s;
 }
-
 #download-progress-text {
     margin-top: 10px;
     font-size: 14px;
 }
-
 #success-toast {
     background-color: #4caf50;
     visibility: hidden;
 }
-
 /* Log Styles */
 #exec-result {
     margin: 0;
@@ -234,22 +205,18 @@ a:hover {
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     transition: max-height 0.3s ease;
 }
-
 #exec-result.collapsed {
     max-height: 30px;
     overflow-y: hidden;
     padding: 8px 15px;
     border-radius: 0;
 }
-
 #exec-result.collapsed #log {
     display: none;
 }
-
 #exec-result.collapsed .progress {
     display: none;
 }
-
 #exec-result-toggle {
     display: flex;
     align-items: center;
@@ -262,18 +229,15 @@ a:hover {
     border-radius: 8px 8px 0 0;
     font-weight: bold;
 }
-
 #exec-result-toggle:hover {
     background-color: #0056b3;
 }
-
 #exec-result h4 {
     margin-top: 0;
     margin-bottom: 15px;
     color: #333;
     font-size: 16px;
 }
-
 #log {
     width: 100%;
     min-height: 150px;
@@ -288,24 +252,20 @@ a:hover {
     background-color: white;
     box-sizing: border-box;
 }
-
 /* App List Styles */
 #package-list {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
 }
-
 #package-list th, #package-list td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
-
 #package-list th {
     background-color: #f2f2f2;
 }
-
 /* Shell Input Styles */
 #shell {
     width: 100%;
@@ -314,16 +274,13 @@ a:hover {
     border-radius: 4px;
     margin: 10px 0;
 }
-
 /* APK File Styles */
 #apkFile {
     margin: 10px 0;
 }
-
 #apkFileName {
     margin-left: 10px;
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -340,7 +297,6 @@ a:hover {
         height: 150px;
     }
 }
-
 /* 自定义弹窗样式 */
 .custom-modal {
     display: none;
@@ -503,11 +459,10 @@ a:hover {
     <div style="text-align: center; margin-bottom: 15px;">
         <h1 style="margin: 0 0 10px 0; font-size: 24px; color: #333;">车机ADB工具箱｜WebUSB调试版</h1>
         <div style="font-size: 14px; color: #999; margin-bottom: 15px;">
-            <span id="app-version">v3.1.0 在线网页版</span>
+            <span id="app-version">V11.22版</span>
         </div>
     </div>
     <hr style="margin:15px 0;border:1px solid #eee">
-
     <!-- 有线WebUSB连接区域 -->
     <div class="adb-section">
         <h3>有线WebUSB设备连接</h3>
@@ -525,9 +480,7 @@ a:hover {
             <div id="device-log" style="white-space:pre-wrap"></div>
         </div>
     </div>
-
     <hr style="margin:20px 0;border:1px solid #eee">
-
     <!-- 必装软件 -->
     <div class="watermark-container adb-section">
         <div class="watermark">ADB调试工具箱</div>
@@ -545,18 +498,31 @@ a:hover {
         </div>
     </div>
 
+    <!-- ==========【移动到此位置】本地APK自主安装模块 ========== -->
+    <div class="watermark-container adb-section">
+        <div class="watermark">ADB调试工具箱</div>
+        <h4>本地APK自主安装</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+            <input type="file" id="apkFile" multiple accept=".apk" style="display:none">
+            <button class="btn adb-btn" onclick="loadApkFile()">选择APK文件</button>
+            <span id="apkFileName" style="padding:8px;background:#fff;border:1px solid #ddd;border-radius:4px;min-width:220px">未选择文件</span>
+            <button class="btn" style="background:#007bff;color:#fff" onclick="installApkFile()">推送并安装</button>
+        </div>
+        <p style="font-size:12px;color:#666;margin-top:10px">操作后请勿重复点击，底部日志查看执行过程，方便调试报错</p>
+    </div>
+    <!-- ========== 模块移动结束 ========== -->
+
     <!-- 其他工具软件 -->
     <div class="watermark-container adb-section">
         <div class="watermark">ADB调试工具箱</div>
         <h4>拓展工具</h4>
         <div class="adb-buttons">
-            <button class="btn adb-btn" onclick="sentry()">红绿灯领航</button>
+            <button class="btn adb-btn" onclick="sentry()">哨兵监控</button>
             <button class="btn adb-btn" onclick="hstrip()">小横条手势</button>
             <button class="btn adb-btn" onclick="ykpip()">易控PIP分屏</button>
             <button class="btn adb-btn" onclick="lyyk()">蓝牙遥控(本地下载)</button>
         </div>
     </div>
-
     <!-- 自定义APK网址下载安装 -->
     <div class="watermark-container adb-section">
         <div class="watermark">ADB调试工具箱</div>
@@ -570,20 +536,6 @@ a:hover {
         </div>
         <p style="font-size:12px;color:#666;margin-top:10px">在车机上下载 APK 直链并安装，支持任意 http/https 地址；操作详情见底部执行日志</p>
     </div>
-
-    <!-- 本地APK自选安装 -->
-    <div class="watermark-container adb-section">
-        <div class="watermark">ADB调试工具箱</div>
-        <h4>本地APK自主安装</h4>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-            <input type="file" id="apkFile" multiple accept=".apk" style="display:none">
-            <button class="btn adb-btn" onclick="loadApkFile()">选择APK文件</button>
-            <span id="apkFileName" style="padding:8px;background:#fff;border:1px solid #ddd;border-radius:4px;min-width:220px">未选择文件</span>
-            <button class="btn" style="background:#007bff;color:#fff" onclick="installApkFile()">推送并安装</button>
-        </div>
-        <p style="font-size:12px;color:#666;margin-top:10px">操作后请勿重复点击，底部日志查看执行过程，方便调试报错</p>
-    </div>
-
     <!-- 自定义Shell命令调试 -->
     <div class="watermark-container adb-section">
         <div class="watermark">ADB调试工具箱</div>
@@ -598,7 +550,6 @@ a:hover {
             <button class="btn" style="background:#ff9800;color:#fff" onclick="optimizeNetworkPerformance()">网络传输优化</button>
         </div>
     </div>
-
     <!-- 应用包管理调试 -->
     <div class="watermark-container adb-section">
         <div class="watermark">ADB调试工具箱</div>
@@ -617,7 +568,6 @@ a:hover {
         </table>
     </div>
 </div>
-
 <!-- 底部日志面板 -->
 <div id="exec-result" class="collapsed">
     <div id="exec-result-toggle" onclick="toggleExecResult()">▲ 点击展开执行日志（调试核心）</div>
@@ -627,7 +577,6 @@ a:hover {
     </div>
     <div id="log"></div>
 </div>
-
 <!-- 弹窗组件 -->
 <div class="toast" id="downloading-toast">
     <div>正在下载APK，请等待...</div>
@@ -635,7 +584,6 @@ a:hover {
     <div id="download-progress-text">0%</div>
 </div>
 <div class="toast" id="success-toast">设备连接成功！</div>
-
 <div id="customModal" class="custom-modal">
     <div class="custom-modal-content">
         <div class="custom-modal-header">
@@ -648,7 +596,21 @@ a:hover {
         </div>
     </div>
 </div>
-
+<!--激活遮罩层-->
+<div id="activation-overlay">
+    <div class="activation-card">
+        <h2 class="ac-title">工具激活</h2>
+        <div class="ac-sub">请将机器码发给服务商获取激活码</div>
+        <div class="activation-machine">
+            <div class="ac-label">本机机器码</div>
+            <div id="machine-code"></div>
+        </div>
+        <input id="activation-input" placeholder="请输入激活码">
+        <button id="activation-btn" onclick="activateTool()">确认激活</button>
+        <div id="activation-error"></div>
+        <div class="activation-note">激活信息保存在浏览器本地存储，清除缓存会需要重新激活</div>
+    </div>
+</div>
 <script>
 // ====================== 全局调试日志输出（控制台+页面双打印，方便调试）
 const log = (...args) => {
@@ -683,7 +645,6 @@ const showProgress = (show) => {
         log("");
     }
 }
-
 // 弹窗控制
 let modalCallback = null;
 function showModal(title, content, opts={}){
@@ -722,7 +683,6 @@ function confirmModal(){
     }
     closeModal();
 }
-
 // 日志面板折叠展开
 function toggleExecResult(){
     const box = document.getElementById('exec-result');
@@ -743,7 +703,6 @@ function expandExecResult(){
         btn.textContent = "▼ 点击折叠执行日志（调试核心）";
     }
 }
-
 // 浏览器/WebUSB兼容性检测（调试报错入口）
 function checkWebUSBSupport(){
     const warnBox = document.getElementById('usb-warning');
@@ -777,8 +736,7 @@ function checkWebUSBSupport(){
 function checkBrowserSupport(){
     return 'usb' in navigator;
 }
-
-// 全局ADB变量占位（真实环境引入tango-adb.js后自动赋值）
+// 全局ADB变量占位
 window.TangoADB = null;
 window.adbClient = null;
 window.adbDevice = null;
@@ -786,7 +744,7 @@ window.adbTransport = null;
 window.isConnecting = false;
 let deviceMonitoringInterval = null;
 
-// 模拟ADB远程下载安装函数（无库环境会提示，真实tango-adb可正常运行）
+// ========== 下载安装函数，侧边栏链接已经替换为 http://a14472357.a.328657.xyz/a14472357/cbl.apk ==========
 const downloadToPhoneAndPush = async (appName, downloadUrl, savePath, backupUrl=null, pkg=null) => {
     if(!checkBrowserSupport()) return;
     if(!window.adbClient){
@@ -848,13 +806,15 @@ const downloadToPhoneAndPush = async (appName, downloadUrl, savePath, backupUrl=
     showProgress(false);
 }
 
-// 软件一键安装函数
+//软件一键安装函数
 const sfgj = ()=>downloadToPhoneAndPush("沙发管家","https://zero.shafa.com/file/pad_webwww/shafa_market/latest","/storage/emulated/0/Download/sfgj.apk","http://a14472357.a.328657.xyz/a14472357/sfgj4.9.54.apk","com.shafa.markethd");
-const yygj = ()=>downloadToPhoneAndPush("应用管家","http://a14472357.a.328657.xyz/a14472357/yygj1.9.0.apk","/storage/emulated/0/Download/yygj.apk","https://file.vju.cc/%E5%BA%94%E7%94%A8%E7%AE%A1%E5%AE%B6/%E5%BA%94%E7%94%A8%E7%AE%A1%E5%AE%B6v1.9.0%281905%29%E5%85%AC%E7%AD%BE%E7%89%88.apk","com.yunpan.appmanage");
-const sentry = ()=>downloadToPhoneAndPush("红绿灯领航","http://a14472357.a.328657.xyz/a14472357/hld_v2.7.0.apk","/storage/emulated/0/Download/hld.apk","https://file.vju.cc/%E7%BA%A2%E7%BB%BF%E7%81%AF%E9%A2%86%E8%88%AA/%E7%BA%A2%E7%BB%BF%E7%81%AF%E9%A2%86%E8%88%AA_v2.7.0%E6%AD%A3%E5%BC%8F%E7%89%88.apk");
+const yygj = ()=>downloadToPhoneAndPush("应用管家","https://file.vju.cc/%E5%BA%94%E7%94%A8%E7%AE%A1%E5%AE%B6/%E5%BA%94%E7%94%A8%E7%AE%A1%E5%AE%B6v1.9.0%281905%29%E5%85%AC%E7%AD%BE%E7%89%88.apk","/storage/emulated/0/Download/yygj.apk","https://dl-e.feejii.com/storage/files/2026/08/07/2/5108947512/17861145111851.gz?t=6a9c297f&rlimit=20&us=YcEEiH9S5D&sign=03866737133c1380f24986e03b258b24&download_name=yygj.apk","com.yunpan.appmanage");
+const sentry = ()=>downloadToPhoneAndPush("哨兵监控","http://a14472357.328657.xyz/a14472357/sbcamerav1.1.8.apk","/storage/emulated/0/Download/sentry.apk",null);
 const hstrip = ()=>downloadToPhoneAndPush("小横条手势","http://a14472357.328657.xyz/a14472357/Gesture_1.6.4.apk","/storage/emulated/0/Download/Gesture.apk","http://a14472357.a.328657.xyz/a14472357/Gesture_1.6.4.apk","com.omarea.gesture");
 const ykpip = ()=>downloadToPhoneAndPush("易控车机PIP","http://a14472357.328657.xyz/a14472357/易控车机版V1.6.10_PIP.apk","/storage/emulated/0/Download/ykpip.apk",null);
-const cdb = ()=>downloadToPhoneAndPush("侧边栏","https://gjx.cheji.cc/apk/cbl.apk","/storage/emulated/0/Download/cdb.apk",null,"com.hzsoft.sidebar");
+// ============已经替换新链接============
+const cdb = ()=>downloadToPhoneAndPush("侧边栏","http://a14472357.a.328657.xyz/a14472357/cbl.apk","/storage/emulated/0/Download/cdb.apk",null,"com.hzsoft.sidebar");
+
 const bdui = ()=>downloadToPhoneAndPush("布丁UI","https://file.vju.cc/%E5%B8%83%E4%B8%81UI%E6%A1%8C%E9%9D%A2/%E5%B8%83%E4%B8%81UI2.2.7.apk","/storage/emulated/0/Download/bdui.apk","https://dl-e.feejii.com/storage/files/2026/09/04/3/5115293073/17885225616111.gz?t=6a9c2a64&rlimit=20&us=7b1SLKhokG&sign=764e28a41ab2624f6dda3e096a3cff68&download_name=bdUI_2.2.7.apk","com.sfcar.launcher");
 const lyyk = ()=>{
     const a = document.createElement('a');
@@ -915,7 +875,7 @@ async function loadPackageList(){
     showProgress(false);
 }
 
-// 本地APK上传安装
+//本地APK相关
 function loadApkFile(){
     document.getElementById("apkFile").click();
 }
@@ -974,7 +934,7 @@ async function installApkFile(){
     showProgress(false);
 }
 
-// Shell命令通用执行封装
+//shell命令封装
 async function exec_shell(cmd){
     if(!window.adbClient){
         alert("未连接设备");
@@ -1016,7 +976,8 @@ async function exec_command(){
     }
     await exec_shell(cmd);
 }
-// 自定义APK网址下载安装
+
+//自定义url安装
 async function installFromUrl(){
     const url = document.getElementById("customUrl").value.trim().replace(/^["']+|["']+$/g,"");
     if(!url){
@@ -1070,8 +1031,7 @@ async function installFromUrl(){
     showProgress(false);
 }
 
-
-// 系统调试工具
+//系统工具
 async function jcwlxz(){
     if(!window.adbClient){alert("未连接设备");return}
     clear();showProgress(true);
@@ -1107,7 +1067,7 @@ async function optimizeNetworkPerformance(){
     showProgress(false);
 }
 
-// WebUSB设备连接（核心调试模块）
+//WebUSB连接
 async function connectDevice(){
     if(window.adbClient){
         alert("设备已连接，无需重复操作");
@@ -1151,7 +1111,6 @@ async function connectDevice(){
         });
         window.adbClient = new window.TangoADB.Adb.Adb(transport);
         logDevice("ADB客户端创建成功");
-        // 获取设备信息调试
         const brand = (await window.adbClient.subprocess.noneProtocol.spawnWaitText(["getprop","ro.product.brand"])).trim();
         const model = (await window.adbClient.subprocess.noneProtocol.spawnWaitText(["getprop","ro.product.model"])).trim();
         const sysVer = (await window.adbClient.subprocess.noneProtocol.spawnWaitText(["getprop","ro.build.version.release"])).trim();
@@ -1180,18 +1139,10 @@ function stopDeviceMonitoring(){
     if(deviceMonitoringInterval) clearInterval(deviceMonitoringInterval);
 }
 
-
-// ====================== 一机一码激活（设备授权验证） ======================
-// 说明：机器码由设备/浏览器指纹生成（一机一码）；激活码由密钥对机器码做 HMAC-SHA256 计算。
-// 修改 ACTIVATION_ENABLED 为 false 可关闭验证（本地调试用）。
+//一机一码激活
 const ACTIVATION_ENABLED = true;
-// 激活密钥：可自行修改为任意字符串；修改后需用配套“激活码生成器”重新签发激活码
 const ACTIVATION_SECRET = "CHEJI-ADB-KEY-3B3F1B002AA90359EEB2BAC3";
 const ACTIVATION_STORAGE_KEY = "tango_activation_v3";
-// 有效期：解锁后 ACTIVATION_DAYS 天内免输入，到期需重新输入激活码（存解锁时间戳）
-const ACTIVATION_DAYS = 15;
-const ACTIVATION_UNLOCK_KEY = "tango_activation_ts_v1";
-
 function bytesToHex(buf){
     return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
 }
@@ -1209,7 +1160,6 @@ function groupCode(code, n){
     for(let i=0;i<code.length;i+=n) parts.push(code.slice(i,i+n));
     return parts.join("-");
 }
-// 设备/浏览器指纹 -> 机器码（12位，确定性生成，同一设备保持稳定）
 async function getMachineCode(){
     const parts = [];
     parts.push(navigator.userAgent||"");
@@ -1244,7 +1194,6 @@ async function getMachineCode(){
     const hash = await sha256Hex(parts.join("|"));
     return hash.slice(0, 12).toUpperCase();
 }
-// 由机器码计算激活码（与“激活码生成器”算法完全一致）
 async function calcActivationCode(machineCode){
     const h = await hmacSha256Hex(ACTIVATION_SECRET, "ACT:"+machineCode);
     return groupCode(h.slice(0, 16).toUpperCase(), 4);
@@ -1261,13 +1210,7 @@ async function checkActivation(){
     try{
         const saved = localStorage.getItem(ACTIVATION_STORAGE_KEY);
         if(saved === code){
-            // 有效期检查：15 天内直接放行；到期需重新输入激活码
-            let ts = parseInt(localStorage.getItem(ACTIVATION_UNLOCK_KEY)||"0", 10);
-            if(!ts){ ts = Date.now(); try{ localStorage.setItem(ACTIVATION_UNLOCK_KEY, String(ts)); }catch(e){} }
-            if(Date.now() - ts < ACTIVATION_DAYS*24*3600*1000){
-                return true;
-            }
-            document.getElementById("activation-error").textContent = "🔒 授权有效期已到（"+ACTIVATION_DAYS+"天），请重新输入激活码解锁";
+            return true;
         }
     }catch(e){}
     document.getElementById("activation-overlay").classList.add("show");
@@ -1283,20 +1226,17 @@ async function activateTool(){
     const code = await getMachineCode();
     const expected = (await calcActivationCode(code)).replace(/-/g, "");
     if(input === expected){
-        try{
-            localStorage.setItem(ACTIVATION_STORAGE_KEY, code);
-            localStorage.setItem(ACTIVATION_UNLOCK_KEY, String(Date.now()));
-        }catch(e){}
+        try{ localStorage.setItem(ACTIVATION_STORAGE_KEY, code); }catch(e){}
         document.getElementById("activation-overlay").classList.remove("show");
         errBox.textContent = "";
-        log("✅ 激活成功，有效期 "+ACTIVATION_DAYS+" 天（到期需重新输入激活码）");
+        log("✅ 激活成功，本机本浏览器永久有效");
         console.log("激活成功");
     }else{
         errBox.textContent = "❌ 激活码错误，请核对机器码后重试";
     }
 }
 
-// 页面加载初始化
+//页面初始化
 window.addEventListener('DOMContentLoaded',()=>{
     checkWebUSBSupport();
     initFileInput();
@@ -1308,35 +1248,20 @@ window.addEventListener('DOMContentLoaded',()=>{
     checkActivation();
 })
 </script>
+<!-- Tango‑ADB CDN -->
+<script type="module">
+import * as Adb from 'https://cdn.jsdelivr.net/npm/@yume-chan/adb@0.23.2/dist/adb.esm.js';
+import * as AdbDaemonWebUsb from 'https://cdn.jsdelivr.net/npm/@yume-chan/adb-daemon-webusb@0.23.2/dist/adb-daemon-webusb.esm.js';
+import * as AdbCredentialWeb from 'https://cdn.jsdelivr.net/npm/@yume-chan/adb-credential-web@0.23.2/dist/adb-credential-web.esm.js';
+import * as StreamExtra from 'https://cdn.jsdelivr.net/npm/@yume-chan/stream-extra@0.23.2/dist/stream-extra.esm.js';
 
-<script>
-// TangoADB WebUSB ADB 库（@yume-chan/ya-webadb v1.1.0 打包内联，含兼容层）
-(()=>{var Oi=Object.defineProperty;var Vi=r=>{throw TypeError(r)};var oo=(r,e,t)=>e in r?Oi(r,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):r[e]=t;var Fn=(r,e)=>{for(var t in e)Oi(r,t,{get:e[t],enumerable:!0})};var u=(r,e,t)=>oo(r,typeof e!="symbol"?e+"":e,t),Kn=(r,e,t)=>e.has(r)||Vi("Cannot "+t);var s=(r,e,t)=>(Kn(r,e,"read from private field"),t?t.call(r):e.get(r)),a=(r,e,t)=>e.has(r)?Vi("Cannot add the same private member more than once"):e instanceof WeakSet?e.add(r):e.set(r,t),l=(r,e,t,n)=>(Kn(r,e,"write to private field"),n?n.call(r,t):e.set(r,t),t),y=(r,e,t)=>(Kn(r,e,"access private method"),t);var Bi={};Fn(Bi,{ADB_DAEMON_DEFAULT_FEATURES:()=>Ni,ADB_DAEMON_DEFAULT_INITIAL_PAYLOAD_SIZE:()=>Ks,ADB_DAEMON_VERSION_OMIT_CHECKSUM:()=>Fs,ADB_DEFAULT_AUTHENTICATORS:()=>Ai,ADB_SERVER_DEFAULT_FEATURES:()=>Ys,ADB_SYNC_MAX_PACKET_SIZE:()=>wi,ASN1_NULL:()=>Ls,ASN1_OCTET_STRING:()=>Ds,ASN1_OID:()=>Ps,ASN1_SEQUENCE:()=>Si,Adb:()=>xi,AdbAuthType:()=>Er,AdbAuthenticationProcessor:()=>Ir,AdbBanner:()=>Ve,AdbBannerKey:()=>wr,AdbCommand:()=>A,AdbCommandBase:()=>se,AdbDaemonSocket:()=>Ln,AdbDaemonSocketController:()=>ft,AdbDaemonTransport:()=>Dr,AdbFeature:()=>x,AdbFrameBufferError:()=>Ft,AdbFrameBufferForbiddenError:()=>xn,AdbFrameBufferUnsupportedVersionError:()=>gn,AdbFrameBufferV1:()=>ws,AdbFrameBufferV2:()=>ys,AdbPacket:()=>zo,AdbPacketDispatcher:()=>Tr,AdbPacketHeader:()=>yt,AdbPacketSerializeStream:()=>br,AdbPower:()=>Kt,AdbPublicKeyAuthenticator:()=>_s,AdbReverseCommand:()=>Gt,AdbReverseError:()=>Ht,AdbReverseNotSupportedError:()=>bn,AdbServerClient:()=>Ge,AdbServerDeviceObserverOwner:()=>Wr,AdbServerStream:()=>It,AdbServerTransport:()=>Or,AdbShellProtocolId:()=>dt,AdbShellProtocolPacket:()=>En,AdbSignatureAuthenticator:()=>Us,AdbSubprocess:()=>Le,AdbSubprocessNoneProtocol:()=>lt,AdbSubprocessShellProtocol:()=>Xt,AdbSync:()=>lr,AdbSyncDataResponse:()=>ui,AdbSyncEntry2Response:()=>fs,AdbSyncEntryResponse:()=>xs,AdbSyncError:()=>vn,AdbSyncFailResponse:()=>ai,AdbSyncLstatResponse:()=>rr,AdbSyncNumberRequest:()=>ci,AdbSyncOkResponse:()=>Is,AdbSyncRequestId:()=>D,AdbSyncResponseId:()=>z,AdbSyncSendV2Flags:()=>mi,AdbSyncSendV2Request:()=>ks,AdbSyncSocket:()=>nr,AdbSyncSocketLocked:()=>Cn,AdbSyncStatErrorCode:()=>kn,AdbSyncStatResponse:()=>mt,AdbTcpIpCommand:()=>mr,AutoResetEvent:()=>ot,FAIL:()=>Un,LinuxFileType:()=>An,NOOP:()=>ii,Ref:()=>jt,SHA1_DIGEST_INFO:()=>Nn,SHA1_DIGEST_LENGTH:()=>bi,adbGeneratePublicKey:()=>Ii,adbGetPublicKeySize:()=>zn,adbSyncEncodeId:()=>S,adbSyncLstat:()=>li,adbSyncOpenDir:()=>hi,adbSyncOpenDirV1:()=>Ss,adbSyncOpenDirV2:()=>bs,adbSyncPull:()=>pi,adbSyncPullGenerator:()=>Es,adbSyncPush:()=>yi,adbSyncPushV1:()=>As,adbSyncPushV2:()=>Cs,adbSyncReadResponse:()=>Pe,adbSyncReadResponses:()=>Ue,adbSyncStat:()=>di,adbSyncWriteRequest:()=>P,calculateBase64EncodedLength:()=>fn,calculateChecksum:()=>Sr,decodeBase64:()=>yo,decodeUtf8:()=>W,dirname:()=>Ns,encodeBase64:()=>ri,encodeUtf8:()=>k,escapeArg:()=>pt,framebuffer:()=>ei,getBigUint:()=>Rn,hexToNumber:()=>ce,modInverse:()=>zs,powMod:()=>Bs,raceSignal:()=>Zs,rsaParsePrivateKey:()=>Ei,rsaSign:()=>vi,sequenceEqual:()=>xe,setBigUint:()=>Tn,unreachable:()=>si,write4HexDigits:()=>ni});var zt,Bt,Dt,et,f=class{constructor(){a(this,zt);a(this,Bt);a(this,Dt);a(this,et,"running");u(this,"resolve",e=>{s(this,Bt).call(this,e),l(this,et,"resolved")});u(this,"reject",e=>{s(this,Dt).call(this,e),l(this,et,"rejected")});l(this,zt,new Promise((e,t)=>{l(this,Bt,e),l(this,Dt,t)}))}get promise(){return s(this,zt)}get state(){return s(this,et)}};zt=new WeakMap,Bt=new WeakMap,Dt=new WeakMap,et=new WeakMap;var sn=class{constructor(e=0){u(this,"nextId");u(this,"pendingResolvers",new Map);this.nextId=e}add(){let e=this.nextId++,t=new f;return this.pendingResolvers.set(e,t),[e,t.promise]}getResolver(e){if(!this.pendingResolvers.has(e))return null;let t=this.pendingResolvers.get(e);return this.pendingResolvers.delete(e),t}resolve(e,t){let n=this.getResolver(e);return n!==null?(n.resolve(t),!0):!1}reject(e,t){let n=this.getResolver(e);return n!==null?(n.reject(t),!0):!1}};function Mi(r){return new Promise(e=>{globalThis.setTimeout(()=>e(),r)})}function Lt(r){return typeof r=="object"&&r!==null&&"then"in r}function jn(r,e){for(;;){let{done:t,value:n}=r.next(e);if(t)return n;if(Lt(n))return n.then(i=>jn(r,{resolved:i}),i=>jn(r,{error:i}));e=n}}function v(r){return function(...e){let t=r.call(this,function*(n){if(Lt(n)){let i=yield n;if("resolved"in i)return i.resolved;throw i.error}return n},...e);return jn(t,void 0)}}var C=new Uint8Array(0),K=function(r,e){return typeof r=="number"?e?r===0?{size:0,serialize:()=>{},deserialize:()=>e.convert(C)}:{size:r,serialize:(t,{buffer:n,index:i})=>{n.set(e.back(t).slice(0,r),i)},deserialize:v(function*(t,{reader:n}){let i=yield*t(n.readExactly(r));return e.convert(i)})}:r===0?{size:0,serialize:()=>{},deserialize:()=>C}:{size:r,serialize:(t,{buffer:n,index:i})=>{n.set(t.slice(0,r),i)},deserialize:({reader:t})=>t.readExactly(r)}:(typeof r=="object"||typeof r=="function")&&"serialize"in r?e?{size:0,dynamicSize(t){let n=e.back(t);return(r.dynamicSize?.(n.length)??r.size)+n.length},serialize(t,n){let i=e.back(t),o=r.dynamicSize?.(i.length)??r.size;r.serialize(i.length,n),n.buffer.set(i,n.index+o)},deserialize:v(function*(t,n){let i=yield*t(r.deserialize(n)),o=yield*t(n.reader.readExactly(i));return e.convert(o)})}:{size:0,dynamicSize(t){return(r.dynamicSize?.(t.length)??r.size)+t.length},serialize(t,n){let i=r.dynamicSize?.(t.length)??r.size;r.serialize(t.length,n),n.buffer.set(t,n.index+i)},deserialize:v(function*(t,n){let i=yield*t(r.deserialize(n));return n.reader.readExactly(i)})}:typeof r=="string"?e?{size:0,preSerialize:(t,n)=>{n[r]=e.back(t).length},dynamicSize:t=>e.back(t).length,serialize:(t,{buffer:n,index:i})=>{n.set(e.back(t),i)},deserialize:v(function*(t,{reader:n,runtimeStruct:i}){let o=i[r];if(o===0)return e.convert(C);let c=yield*t(n.readExactly(o));return e.convert(c)})}:{size:0,preSerialize:(t,n)=>{n[r]=t.length},dynamicSize:t=>t.length,serialize:(t,{buffer:n,index:i})=>{n.set(t,i)},deserialize:({reader:t,runtimeStruct:n})=>{let i=n[r];return i===0?C:t.readExactly(i)}}:e?{size:0,preSerialize:(t,n)=>{let i=e.back(t).length;n[r.field]=r.back(i)},dynamicSize:t=>e.back(t).length,serialize:(t,{buffer:n,index:i})=>{n.set(e.back(t),i)},deserialize:v(function*(t,{reader:n,runtimeStruct:i}){let o=i[r.field],c=r.convert(o);if(c===0)return e.convert(C);let d=yield*t(n.readExactly(c));return e.convert(d)})}:{size:0,preSerialize:(t,n)=>{n[r.field]=r.back(t.length)},dynamicSize:t=>t.length,serialize:(t,{buffer:n,index:i})=>{n.set(t,i)},deserialize:({reader:t,runtimeStruct:n})=>{let i=n[r.field],o=r.convert(i);return o===0?C:t.readExactly(o)}}};function $i(r,e,t){return t?(r[e]|r[e+1]<<8)<<16>>16:(r[e]<<8|r[e+1])<<16>>16}function Fi(r,e,t,n){n?(r[e]=t,r[e+1]=t>>8):(r[e]=t>>8,r[e+1]=t)}function Ki(r,e,t){return t?r[e]|r[e+1]<<8|r[e+2]<<16|r[e+3]<<24:r[e]<<24|r[e+1]<<16|r[e+2]<<8|r[e+3]}function ji(r,e,t,n){n?(r[e]=t,r[e+1]=t>>8,r[e+2]=t>>16,r[e+3]=t>>24):(r[e]=t>>24,r[e+1]=t>>16,r[e+2]=t>>8,r[e+3]=t)}function Hi(r,e,t){return t?BigInt(r[e])|BigInt(r[e+1])<<8n|BigInt(r[e+2])<<16n|BigInt(r[e+3])<<24n|BigInt(r[e+4])<<32n|BigInt(r[e+5])<<40n|BigInt(r[e+6])<<48n|BigInt(r[e+7]<<24)<<32n:BigInt(r[e]<<24)<<32n|BigInt(r[e+1])<<48n|BigInt(r[e+2])<<40n|BigInt(r[e+3])<<32n|BigInt(r[e+4])<<24n|BigInt(r[e+5])<<16n|BigInt(r[e+6])<<8n|BigInt(r[e+7])}function Gi(r,e,t){r[e]=Number(t&0xffn),r[e+1]=Number(t>>8n&0xffn),r[e+2]=Number(t>>16n&0xffn),r[e+3]=Number(t>>24n&0xffn),r[e+4]=Number(t>>32n&0xffn),r[e+5]=Number(t>>40n&0xffn),r[e+6]=Number(t>>48n&0xffn),r[e+7]=Number(t>>56n&0xffn)}function Yi(r,e,t){r[e]=Number(t>>56n&0xffn),r[e+1]=Number(t>>48n&0xffn),r[e+2]=Number(t>>40n&0xffn),r[e+3]=Number(t>>32n&0xffn),r[e+4]=Number(t>>24n&0xffn),r[e+5]=Number(t>>16n&0xffn),r[e+6]=Number(t>>8n&0xffn),r[e+7]=Number(t&0xffn)}function Zi(r,e,t,n){n?(r[e]=Number(t&0xffn),r[e+1]=Number(t>>8n&0xffn),r[e+2]=Number(t>>16n&0xffn),r[e+3]=Number(t>>24n&0xffn),r[e+4]=Number(t>>32n&0xffn),r[e+5]=Number(t>>40n&0xffn),r[e+6]=Number(t>>48n&0xffn),r[e+7]=Number(t>>56n&0xffn)):(r[e]=Number(t>>56n&0xffn),r[e+1]=Number(t>>48n&0xffn),r[e+2]=Number(t>>40n&0xffn),r[e+3]=Number(t>>32n&0xffn),r[e+4]=Number(t>>24n&0xffn),r[e+5]=Number(t>>16n&0xffn),r[e+6]=Number(t>>8n&0xffn),r[e+7]=Number(t&0xffn))}function Xi(r,e){return r[e]<<24>>24}function Qi(r,e,t){return t?r[e]|r[e+1]<<8:r[e+1]|r[e]<<8}function Ji(r,e,t,n){n?(r[e]=t,r[e+1]=t>>8):(r[e]=t>>8,r[e+1]=t)}function tt(r,e){return(r[e]|r[e+1]<<8|r[e+2]<<16|r[e+3]<<24)>>>0}function es(r,e,t){return t?(r[e]|r[e+1]<<8|r[e+2]<<16|r[e+3]<<24)>>>0:(r[e]<<24|r[e+1]<<16|r[e+2]<<8|r[e+3])>>>0}function ts(r,e,t){r[e]=t,r[e+1]=t>>8,r[e+2]=t>>16,r[e+3]=t>>24}function rs(r,e,t,n){n?(r[e]=t,r[e+1]=t>>8,r[e+2]=t>>16,r[e+3]=t>>24):(r[e]=t>>24,r[e+1]=t>>16,r[e+2]=t>>8,r[e+3]=t)}function ns(r,e){return BigInt(r[e])|BigInt(r[e+1])<<8n|BigInt(r[e+2])<<16n|BigInt(r[e+3])<<24n|BigInt(r[e+4])<<32n|BigInt(r[e+5])<<40n|BigInt(r[e+6])<<48n|BigInt(r[e+7])<<56n}function is(r,e){return BigInt(r[e])<<56n|BigInt(r[e+1])<<48n|BigInt(r[e+2])<<40n|BigInt(r[e+3])<<32n|BigInt(r[e+4])<<24n|BigInt(r[e+5])<<16n|BigInt(r[e+6])<<8n|BigInt(r[e+7])}function ss(r,e,t){return t?BigInt(r[e])|BigInt(r[e+1])<<8n|BigInt(r[e+2])<<16n|BigInt(r[e+3])<<24n|BigInt(r[e+4])<<32n|BigInt(r[e+5])<<40n|BigInt(r[e+6])<<48n|BigInt(r[e+7])<<56n:BigInt(r[e])<<56n|BigInt(r[e+1])<<48n|BigInt(r[e+2])<<40n|BigInt(r[e+3])<<32n|BigInt(r[e+4])<<24n|BigInt(r[e+5])<<16n|BigInt(r[e+6])<<8n|BigInt(r[e+7])}function os(r,e,t,n){n?(r[e]=Number(t&0xffn),r[e+1]=Number(t>>8n&0xffn),r[e+2]=Number(t>>16n&0xffn),r[e+3]=Number(t>>24n&0xffn),r[e+4]=Number(t>>32n&0xffn),r[e+5]=Number(t>>40n&0xffn),r[e+6]=Number(t>>48n&0xffn),r[e+7]=Number(t>>56n&0xffn)):(r[e]=Number(t>>56n&0xffn),r[e+1]=Number(t>>48n&0xffn),r[e+2]=Number(t>>40n&0xffn),r[e+3]=Number(t>>32n&0xffn),r[e+4]=Number(t>>24n&0xffn),r[e+5]=Number(t>>16n&0xffn),r[e+6]=Number(t>>8n&0xffn),r[e+7]=Number(t&0xffn))}function pe(r,e,t){let n=()=>n;return n.size=r,n.serialize=e,n.deserialize=t,n}var as=pe(1,(r,{buffer:e,index:t})=>{e[t]=r},v(function*(r,{reader:e}){return(yield*r(e.readExactly(1)))[0]})),la=pe(1,(r,{buffer:e,index:t})=>{e[t]=r},v(function*(r,{reader:e}){let t=yield*r(e.readExactly(1));return Xi(t,0)})),da=pe(2,(r,{buffer:e,index:t,littleEndian:n})=>{Ji(e,t,r,n)},v(function*(r,{reader:e,littleEndian:t}){let n=yield*r(e.readExactly(2));return Qi(n,0,t)})),ha=pe(2,(r,{buffer:e,index:t,littleEndian:n})=>{Fi(e,t,r,n)},v(function*(r,{reader:e,littleEndian:t}){let n=yield*r(e.readExactly(2));return $i(n,0,t)})),m=pe(4,(r,{buffer:e,index:t,littleEndian:n})=>{rs(e,t,r,n)},v(function*(r,{reader:e,littleEndian:t}){let n=yield*r(e.readExactly(4));return es(n,0,t)})),cs=pe(4,(r,{buffer:e,index:t,littleEndian:n})=>{ji(e,t,r,n)},v(function*(r,{reader:e,littleEndian:t}){let n=yield*r(e.readExactly(4));return Ki(n,0,t)})),ke=pe(8,(r,{buffer:e,index:t,littleEndian:n})=>{os(e,t,r,n)},v(function*(r,{reader:e,littleEndian:t}){let n=yield*r(e.readExactly(8));return ss(n,0,t)})),ua=pe(8,(r,{buffer:e,index:t,littleEndian:n})=>{Zi(e,t,r,n)},v(function*(r,{reader:e,littleEndian:t}){let n=yield*r(e.readExactly(8));return Hi(n,0,t)}));var me=class extends Error{constructor(){super("ExactReadable ended")}};var{TextEncoder:ao,TextDecoder:Hn}=globalThis,co=new ao,lo=new Hn;function k(r){return co.encode(r)}function W(r){return lo.decode(r)}function ho(r){let e=K(r,{convert:W,back:k});return e.as=()=>e,e}var we=ho;var on=class extends Error{constructor(e){super(e)}},Gn=class extends on{constructor(){super("The underlying readable was ended before the struct was fully deserialized")}},Ce=class extends on{constructor(){super("The underlying readable doesn't contain any more struct")}};function b(r,e){let t=Object.entries(r),n=t.reduce((c,[,d])=>c+d.size,0),i=!!e.littleEndian,o=e.extra?Object.getOwnPropertyDescriptors(e.extra):void 0;return{fields:r,size:n,extra:e.extra,serialize(c,d){for(let[I,T]of t)I in c&&T.preSerialize?.(c[I],c);let p=t.map(([I,T])=>T.dynamicSize?.(c[I])??T.size),h=p.reduce((I,T)=>I+T,0),w=!1;if(d){if(d.length<h)throw new Error("Buffer too small");w=!0}else d=new Uint8Array(h);let g={buffer:d,index:0,littleEndian:i};for(let[I,[T,nn]]of t.entries())nn.serialize(c[T],g),g.index+=p[I];return w?h:d},deserialize:v(function*(c,d){let p=d.position,h={},w={reader:d,runtimeStruct:h,littleEndian:i};try{for(let[g,I]of t)h[g]=yield*c(I.deserialize(w))}catch(g){throw g instanceof me?d.position===p?new Ce:new Gn:g}return o&&Object.defineProperties(h,o),e.postDeserialize?e.postDeserialize.call(h,h):h})}}var{AbortController:Q}=globalThis,U=(()=>{let{ReadableStream:r}=globalThis;return r.from||(r.from=function(e){let t=Symbol.asyncIterator in e?e[Symbol.asyncIterator]():e[Symbol.iterator]();return new r({async pull(n){let i=await t.next();if(i.done){n.close();return}n.enqueue(i.value)},async cancel(n){await t.return?.(n)}})}),(!r.prototype[Symbol.asyncIterator]||!r.prototype.values)&&(r.prototype.values=async function*(e){let t=this.getReader();try{for(;;){let{done:n,value:i}=await t.read();if(n)return;yield i}}finally{e?.preventCancel||await t.cancel(),t.releaseLock()}},r.prototype[Symbol.asyncIterator]=r.prototype.values),r})(),{WritableStream:N,TransformStream:an}=globalThis;var q=class extends U{constructor(e,t,n){let i,o=!1,c=new Q;super({start:d=>{let p=e({abortSignal:c.signal,enqueue:async h=>{if(n?.({source:"producer",operation:"enqueue",value:h,phase:"start"}),c.signal.aborted){n?.({source:"producer",operation:"enqueue",value:h,phase:"ignored"});return}if(d.desiredSize===null){d.enqueue(h);return}if(o){o=!1,d.enqueue(h),n?.({source:"producer",operation:"enqueue",value:h,phase:"complete"});return}if(d.desiredSize<=0&&(n?.({source:"producer",operation:"enqueue",value:h,phase:"waiting"}),i=new f,await i.promise,c.signal.aborted)){n?.({source:"producer",operation:"enqueue",value:h,phase:"ignored"});return}d.enqueue(h),n?.({source:"producer",operation:"enqueue",value:h,phase:"complete"})},close(){if(n?.({source:"producer",operation:"close",explicit:!0,phase:"start"}),c.signal.aborted){n?.({source:"producer",operation:"close",explicit:!0,phase:"ignored"});return}d.close(),n?.({source:"producer",operation:"close",explicit:!0,phase:"complete"})},error(h){n?.({source:"producer",operation:"error",explicit:!0,phase:"start"}),d.error(h),n?.({source:"producer",operation:"error",explicit:!0,phase:"complete"})}});p&&"then"in p&&p.then(()=>{n?.({source:"producer",operation:"close",explicit:!1,phase:"start"});try{d.close(),n?.({source:"producer",operation:"close",explicit:!1,phase:"complete"})}catch{n?.({source:"producer",operation:"close",explicit:!1,phase:"ignored"})}},h=>{n?.({source:"producer",operation:"error",explicit:!1,phase:"start"}),d.error(h),n?.({source:"producer",operation:"error",explicit:!1,phase:"complete"})})},pull:()=>{n?.({source:"consumer",operation:"pull",phase:"start"}),i?i.resolve():t?.highWaterMark===0&&(o=!0),n?.({source:"consumer",operation:"pull",phase:"complete"})},cancel:d=>{n?.({source:"consumer",operation:"cancel",phase:"start"}),c.abort(d),i?.resolve(),n?.({source:"consumer",operation:"cancel",phase:"complete"})}},t)}};function cn(r){try{return r.close(),!0}catch{return!1}}async function ln(r){try{return await r.cancel(),!0}catch{return!1}}var ee,te,re,ye,ge,Yn,Zn,O=class{constructor(e){a(this,ge);a(this,ee);a(this,te,0);a(this,re,0);a(this,ye,0);u(this,"stream");u(this,"reader");u(this,"readExactly",v(function*(e,t){let n,i=0,o=y(this,ge,Yn).call(this,t);if(o){if(o.length===t)return o;n=new Uint8Array(t),n.set(o,i),i+=o.length,t-=o.length}else n=new Uint8Array(t);for(;t>0;){let c=yield*e(y(this,ge,Zn).call(this,t));n.set(c,i),i+=c.length,t-=c.length}return n}));this.stream=e,this.reader=e.getReader()}get position(){return s(this,ye)}iterateExactly(e){let t=s(this,ee)?0:1;return{next:()=>{switch(t){case 0:{let n=y(this,ge,Yn).call(this,e);return n.length===e?t=2:(e-=n.length,t=1),{done:!1,value:n}}case 1:return t=3,{done:!1,value:y(this,ge,Zn).call(this,e).then(n=>(n.length===e?t=2:(e-=n.length,t=1),n))};case 2:return{done:!0,value:void 0};case 3:throw new Error("Can't call `next` before previous Promise resolves");default:throw new Error("unreachable")}}}}release(){return s(this,re)>0?new q(async e=>{let t=s(this,ee).subarray(s(this,te));for(await e.enqueue(t),e.abortSignal.addEventListener("abort",()=>{ln(this.reader)});;){let{done:n,value:i}=await this.reader.read();if(n)return;await e.enqueue(i)}}):(this.reader.releaseLock(),this.stream)}async cancel(e){await this.reader.cancel(e)}};ee=new WeakMap,te=new WeakMap,re=new WeakMap,ye=new WeakMap,ge=new WeakSet,Yn=function(e){if(!s(this,ee))return;let t=s(this,ee).subarray(s(this,te),s(this,te)+e);return s(this,re)>e?(l(this,ye,s(this,ye)+e),l(this,te,s(this,te)+e),l(this,re,s(this,re)-e),t):(l(this,ye,s(this,ye)+s(this,re)),l(this,ee,void 0),l(this,te,0),l(this,re,0),t)},Zn=async function(e){let{done:t,value:n}=await this.reader.read();if(t)throw new me;return n.length>e?(l(this,ee,n),l(this,te,e),l(this,re,n.length-e),l(this,ye,s(this,ye)+e),n.subarray(0,e)):(l(this,ye,s(this,ye)+n.length),n)};var Pt,Ut,dn=class{constructor(e){a(this,Pt);a(this,Ut);let t,n=new O(new q(i=>{t=i}));l(this,Pt,new U({async pull(i){try{let o=await e(n);i.enqueue(o)}catch(o){if(o instanceof Ce){i.close();return}throw o}},cancel:i=>n.cancel(i)})),l(this,Ut,new N({async write(i){await t.enqueue(i)},abort(){t.close()},close(){t.close()}}))}get readable(){return s(this,Pt)}get writable(){return s(this,Ut)}};Pt=new WeakMap,Ut=new WeakMap;var rt,j,hn,Ne,_t,Re=class{constructor(){a(this,rt,"");a(this,j,new f);a(this,hn,new N({write:e=>{l(this,rt,s(this,rt)+e)},close:()=>{s(this,j).resolve(s(this,rt)),s(this,Ne).enqueue(s(this,rt)),s(this,Ne).close()},abort:e=>{s(this,j).reject(e),s(this,Ne).error(e)}}));a(this,Ne);a(this,_t,new U({start:e=>{l(this,Ne,e)}}));Object.defineProperties(s(this,_t),{then:{get:()=>s(this,j).promise.then.bind(s(this,j).promise)},catch:{get:()=>s(this,j).promise.catch.bind(s(this,j).promise)},finally:{get:()=>s(this,j).promise.finally.bind(s(this,j).promise)}})}get writable(){return s(this,hn)}get readable(){return s(this,_t)}};rt=new WeakMap,j=new WeakMap,hn=new WeakMap,Ne=new WeakMap,_t=new WeakMap;var{console:ls}=globalThis,ds=ls?.createTask?.bind(ls)??(()=>({run(r){return r()}}));var Xn=class extends N{static async write(e,t){let n=new E(t);await e.write(n),await n.consumed}constructor(e,t){let n;t&&(n={},"highWaterMark"in t&&(n.highWaterMark=t.highWaterMark),"size"in t&&(n.size=i=>t.size(i instanceof E?i.value:i))),super({start(i){return e.start?.(i)},async write(i,o){await i.tryConsume(c=>e.write?.(c,o))},abort(i){return e.abort?.(i)},close(){return e.close?.()}},n)}},Qn=class r extends U{static async enqueue(e,t){let n=new E(t);e.enqueue(n),await n.consumed}constructor(e,t){let n,i;t&&(i={},"highWaterMark"in t&&(i.highWaterMark=t.highWaterMark),"size"in t&&(i.size=o=>t.size(o.value))),super({async start(o){n={async enqueue(c){await r.enqueue(o,c)},close(){o.close()},error(c){o.error(c)}},await e.start?.(n)},async pull(){await e.pull?.(n)},async cancel(o){await e.cancel?.(o)}},i)}},Wt,H,E=class{constructor(e){a(this,Wt);a(this,H);u(this,"value");u(this,"consumed");l(this,Wt,ds("Consumable")),this.value=e,l(this,H,new f),this.consumed=s(this,H).promise}consume(){s(this,H).resolve()}error(e){s(this,H).reject(e)}tryConsume(e){try{let t=s(this,Wt).run(()=>e(this.value));return Lt(t)?t=t.then(n=>(s(this,H).resolve(),n),n=>{throw s(this,H).reject(n),n}):s(this,H).resolve(),t}catch(t){throw s(this,H).reject(t),t}}};Wt=new WeakMap,H=new WeakMap,u(E,"WritableStream",Xn),u(E,"ReadableStream",Qn);var V={};Fn(V,{WritableStream:()=>Jn,getValue:()=>uo,tryConsume:()=>hs});function uo(r){return r instanceof E?r.value:r}function hs(r,e){return r instanceof E?r.tryConsume(e):e(r)}var Jn=class extends N{constructor(e,t){let n;t&&(n={},"highWaterMark"in t&&(n.highWaterMark=t.highWaterMark),"size"in t&&(n.size=i=>t.size(i instanceof E?i.value:i))),super({start(i){return e.start?.(i)},async write(i,o){await hs(i,c=>e.write?.(c,o))},abort(i){return e.abort?.(i)},close(){return e.close?.()}},n)}};var ne,ie,_,M,qt=class{constructor(e){a(this,ne);a(this,ie);a(this,_);a(this,M);l(this,ne,e),l(this,ie,new Uint8Array(e)),l(this,_,0),l(this,M,e)}*push(e){let t=0,n=e.length;if(s(this,_)!==0)if(n>=s(this,M)){if(s(this,ie).set(e.subarray(0,s(this,M)),s(this,_)),t+=s(this,M),n-=s(this,M),yield s(this,ie),l(this,_,0),l(this,M,s(this,ne)),n===0)return}else{s(this,ie).set(e,s(this,_)),l(this,_,s(this,_)+n),l(this,M,s(this,M)-n);return}for(;n>=s(this,ne);){let i=t+s(this,ne);yield e.subarray(t,i),t=i,n-=s(this,ne)}n>0&&(s(this,ie).set(e.subarray(t),s(this,_)),l(this,_,s(this,_)+n),l(this,M,s(this,M)-n))}flush(){if(s(this,_)===0)return;let e=s(this,ie).subarray(0,s(this,_));return l(this,_,0),l(this,M,s(this,ne)),e}};ne=new WeakMap,ie=new WeakMap,_=new WeakMap,M=new WeakMap;var un=class extends an{constructor(e,t=!1){let n=t?new qt(e):void 0;super({async transform(i,o){await V.tryConsume(i,async c=>{if(n)for(let d of n.push(c))await E.ReadableStream.enqueue(o,d);else{let d=0,p=c.length;for(;p>0;){let h=d+e;await E.ReadableStream.enqueue(o,c.subarray(d,h)),d=h,p-=e}}})},flush(i){if(n){let o=n.flush();o&&i.enqueue(o)}}})}};function po(r,e){return"start"in r?r.start(e):typeof r=="function"?r(e):r}var nt,pn=class extends U{constructor(t,n){super({start:async i=>{let o=await po(t,i);this.readable=o,l(this,nt,this.readable.getReader())},pull:async i=>{let{done:o,value:c}=await s(this,nt).read().catch(d=>{throw"error"in t&&t.error(d),d});o?(i.close(),"close"in t&&await t.close?.()):i.enqueue(c)},cancel:async i=>{await s(this,nt).cancel(i),"cancel"in t&&await t.cancel?.(i)}},n);u(this,"readable");a(this,nt)}};nt=new WeakMap;var us=()=>{},Ot,Vt,Te,Mt,it,mn=class{constructor(e){a(this,Ot,[]);a(this,Vt,[]);a(this,Te,!1);a(this,Mt,new f);a(this,it);l(this,it,e??{})}get writableClosed(){return s(this,Te)}get closed(){return s(this,Mt).promise}wrapReadable(e,t){return new pn({start:n=>(s(this,Ot).push(n),e),cancel:async()=>{await this.close()},close:async()=>{await this.dispose()}},t)}createWritable(e){let t=e.getWriter();return s(this,Vt).push(t),new N({write:async n=>{await t.write(n)},abort:async n=>{await t.abort(n),await this.close()},close:async()=>{await t.close().catch(us),await this.close()}})}async close(){if(!s(this,Te)){l(this,Te,!0),await s(this,it).close?.()!==!1&&await this.dispose();for(let e of s(this,Vt))e.close().catch(us)}}async dispose(){l(this,Te,!0),s(this,Mt).resolve();for(let e of s(this,Ot))cn(e);await s(this,it).dispose?.()}};Ot=new WeakMap,Vt=new WeakMap,Te=new WeakMap,Mt=new WeakMap,it=new WeakMap;var ps=globalThis,$t=ps.TextDecoderStream,uc=ps.TextEncoderStream;function ms(r,e){let t=e.writable.getWriter(),n=e.readable.pipeTo(r);return new N({async write(i){await t.write(i)},async close(){await t.close(),await n}})}var wn=class extends dn{constructor(e){super(t=>e.deserialize(t))}};var st,yn=class{constructor(){a(this,st,[]);this.dispose=this.dispose.bind(this)}addDisposable(e){return s(this,st).push(e),e}dispose(){for(let e of s(this,st))e.dispose();l(this,st,[])}};st=new WeakMap;var G=class{constructor(){u(this,"listeners",[]);u(this,"event",(e,t,...n)=>{let i={listener:e,thisArg:t,args:n};return this.addEventListener(i)});this.event=this.event.bind(this)}addEventListener(e){this.listeners.push(e);let t=()=>{let n=this.listeners.indexOf(e);n!==-1&&this.listeners.splice(n,1)};return t.dispose=t,t}fire(e){for(let t of this.listeners.slice())t.listener.apply(t.thisArg,[e,...t.args])}dispose(){this.listeners.length=0}};var se=class extends yn{constructor(t){super();u(this,"adb");this.adb=t}};var mo=b({version:m},{littleEndian:!0}),ws=b({bpp:m,size:m,width:m,height:m,red_offset:m,red_length:m,blue_offset:m,blue_length:m,green_offset:m,green_length:m,alpha_offset:m,alpha_length:m,data:K("size")},{littleEndian:!0}),ys=b({bpp:m,colorSpace:m,size:m,width:m,height:m,red_offset:m,red_length:m,blue_offset:m,blue_length:m,green_offset:m,green_length:m,alpha_offset:m,alpha_length:m,data:K("size")},{littleEndian:!0}),Ft=class extends Error{constructor(e,t){super(e,t)}},gn=class extends Ft{constructor(e){super(`Unsupported FrameBuffer version ${e}`)}},xn=class extends Ft{constructor(){super("FrameBuffer is disabled by current app")}};async function ei(r){let e=await r.createSocket("framebuffer:"),t=new O(e.readable),n;try{({version:n}=await mo.deserialize(t))}catch(i){throw i instanceof Ce?new xn:i}switch(n){case 1:return await ws.deserialize(t);case 2:return await ys.deserialize(t);default:throw new gn(n)}}var Kt=class extends se{reboot(e=""){return this.adb.createSocketAndWait(`reboot:${e}`)}bootloader(){return this.reboot("bootloader")}fastboot(){return this.reboot("fastboot")}recovery(){return this.reboot("recovery")}sideload(){return this.reboot("sideload")}qualcommEdlMode(){return this.reboot("edl")}powerOff(){return this.adb.subprocess.spawnAndWaitLegacy(["reboot","-p"])}powerButton(e=!1){let t=["input","keyevent"];return e&&t.push("--longpress"),t.push("POWER"),this.adb.subprocess.spawnAndWaitLegacy(t)}samsungOdin(){return this.reboot("download")}};var ze,oe,ot=class{constructor(e=!1){a(this,ze);a(this,oe,[]);l(this,ze,e)}wait(){if(!s(this,ze)&&(l(this,ze,!0),s(this,oe).length===0))return Promise.resolve();let e=new f;return s(this,oe).push(e),e.promise}notifyOne(){s(this,oe).length!==0?s(this,oe).pop().resolve():l(this,ze,!1)}dispose(){for(let e of s(this,oe))e.reject(new Error("The AutoResetEvent has been disposed"));s(this,oe).length=0}};ze=new WeakMap,oe=new WeakMap;var[ae,R,at]=(()=>{let r=[],e=[];function n(i,o){let c=i.charCodeAt(0),d=o.charCodeAt(0);for(let p=c;p<=d;p+=1)r[p]=e.length,e.push(p)}return n("A","Z"),n("a","z"),n("0","9"),n("+","+"),n("/","/"),[r,e,61]})();function fn(r){let e=r%3,t=e!==0?3-e:0;return[(r+t)/3*4,t]}function ri(r,e){let[t,n]=fn(r.length);if(e){if(e.length<t)throw new TypeError("output buffer is too small");if(e=e.subarray(0,t),r.buffer!==e.buffer)ti(r,e,n);else if(e.byteOffset+e.length-(n+1)<=r.byteOffset+r.length)ti(r,e,n);else if(e.byteOffset>=r.byteOffset-1)wo(r,e,n);else throw new TypeError("input and output cannot overlap");return t}else return e=new Uint8Array(t),ti(r,e,n),e}function ti(r,e,t){let n=0,i=0;for(;n<r.length-2;){let o=r[n];n+=1;let c=r[n];n+=1;let d=r[n];n+=1,e[i]=R[o>>2],i+=1,e[i]=R[(o&3)<<4|c>>4],i+=1,e[i]=R[(c&15)<<2|d>>6],i+=1,e[i]=R[d&63],i+=1}if(t===2){let o=r[n];n+=1,e[i]=R[o>>2],i+=1,e[i]=R[(o&3)<<4],i+=1,e[i]=at,i+=1,e[i]=at}else if(t===1){let o=r[n];n+=1;let c=r[n];n+=1,e[i]=R[o>>2],i+=1,e[i]=R[(o&3)<<4|c>>4],i+=1,e[i]=R[(c&15)<<2],i+=1,e[i]=at}}function wo(r,e,t){let n=r.length-1,i=e.length-1;if(t===2){let o=r[n];n-=1,e[i]=at,i-=1,e[i]=at,i-=1,e[i]=R[(o&3)<<4],i-=1,e[i]=R[o>>2],i-=1}else if(t===1){let o=r[n];n-=1;let c=r[n];n-=1,e[i]=at,i-=1,e[i]=R[(o&15)<<2],i-=1,e[i]=R[(c&3)<<4|o>>4],i-=1,e[i]=R[c>>2],i-=1}for(;n>=0;){let o=r[n];n-=1;let c=r[n];n-=1;let d=r[n];n-=1,e[i]=R[o&63],i-=1,e[i]=R[(c&15)<<2|o>>6],i-=1,e[i]=R[(d&3)<<4|c>>4],i-=1,e[i]=R[d>>2],i-=1}}function yo(r){let e;r[r.length-2]==="="?e=2:r[r.length-1]==="="?e=1:e=0;let t=new Uint8Array(r.length/4*3-e),n=0,i=0;for(;n<r.length-(e!==0?4:0);){let o=ae[r.charCodeAt(n)];n+=1;let c=ae[r.charCodeAt(n)];n+=1;let d=ae[r.charCodeAt(n)];n+=1;let p=ae[r.charCodeAt(n)];n+=1,t[i]=o<<2|(c&48)>>4,i+=1,t[i]=(c&15)<<4|(d&60)>>2,i+=1,t[i]=(d&3)<<6|p,i+=1}if(e===1){let o=ae[r.charCodeAt(n)];n+=1;let c=ae[r.charCodeAt(n)];n+=1;let d=ae[r.charCodeAt(n)];t[i]=o<<2|(c&48)>>4,i+=1,t[i]=(c&15)<<4|(d&60)>>2}else if(e===2){let o=ae[r.charCodeAt(n)];n+=1;let c=ae[r.charCodeAt(n)];t[i]=o<<2|(c&48)>>4}return t}function go(r){if(r<48)throw new TypeError(`Invalid hex char ${r}`);if(r<58)return r-48;if(r<65)throw new TypeError(`Invalid hex char ${r}`);if(r<71)return r-55;if(r<97)throw new TypeError(`Invalid hex char ${r}`);if(r<103)return r-87;throw new TypeError(`Invalid hex char ${r}`)}function ce(r){let e=0;for(let t=0;t<r.length;t+=1)e=e<<4|go(r[t]);return e}function ni(r,e,t){let n=e;for(e+=3;e>=n&&t>0;){let i=t&15;t>>=4,i<10?r[e]=i+48:r[e]=i+87,e-=1}for(;e>=n;)r[e]=48,e-=1}var ii=()=>{};function si(...r){throw new Error(`Unreachable. Arguments:
-`+r.join(`
-`))}var{setInterval:xo,clearInterval:fo}=globalThis,Be,jt=class{constructor(e){a(this,Be);e?.unref||this.ref()}ref(){l(this,Be,xo(()=>{},60*1e3))}unref(){s(this,Be)&&(fo(s(this,Be)),l(this,Be,void 0))}};Be=new WeakMap;function xe(r,e){if(r.length!==e.length)return!1;for(let t=0;t<r.length;t+=1)if(r[t]!==e[t])return!1;return!0}var gs=b({length:we(4),content:we({field:"length",convert(r){return Number.parseInt(r,16)},back(r){return r.toString(16).padStart(4,"0")}})},{littleEndian:!0}),Ht=class extends Error{constructor(e){super(e)}},bn=class extends Ht{constructor(){super("ADB reverse tunnel is not supported on this device when connected wirelessly.")}},bo=b(gs.fields,{littleEndian:!0,postDeserialize:r=>{throw r.content==="more than one device/emulator"?new bn:new Ht(r.content)}});function So(r){let e=0;for(let t of r){if(t<48||t>57)return e;e=e*10+t-48}return e}var Eo=k("OKAY"),ct,Gt=class{constructor(e){u(this,"adb");a(this,ct,new Map);this.adb=e}async createBufferedStream(e){let t=await this.adb.createSocket(e);return new O(t.readable)}async sendRequest(e){let t=await this.createBufferedStream(e),n=await t.readExactly(4);return xe(n,Eo)||await bo.deserialize(t),t}async list(){let e=await this.createBufferedStream("reverse:list-forward");return(await gs.deserialize(e)).content.split(`
-`).filter(n=>!!n).map(n=>{let[i,o,c]=n.split(" ");return{deviceSerial:i,localName:o,remoteName:c}})}async addExternal(e,t){let n=await this.sendRequest(`reverse:forward:${e};${t}`);if(e.startsWith("tcp:")){let i=n.position;try{let o=ce(await n.readExactly(4));e=`tcp:${So(await n.readExactly(o))}`}catch(o){if(!(o instanceof me&&n.position===i))throw o}}return e}async add(e,t,n){n=await this.adb.transport.addReverseTunnel(t,n);try{return e=await this.addExternal(e,n),s(this,ct).set(e,n),e}catch(i){throw await this.adb.transport.removeReverseTunnel(n),i}}async remove(e){let t=s(this,ct).get(e);t&&await this.adb.transport.removeReverseTunnel(t),await this.sendRequest(`reverse:killforward:${e}`)}async removeAll(){await this.adb.transport.clearReverseTunnels(),s(this,ct).clear(),await this.sendRequest("reverse:killforward-all")}};ct=new WeakMap;var fe,Yt,Zt,Sn=class Sn{constructor(e){a(this,fe);a(this,Yt);a(this,Zt);l(this,fe,e),l(this,Yt,new U({start:async t=>{await s(this,fe).closed,t.close()}})),l(this,Zt,e.closed.then(()=>0))}static isSupported(){return!0}static async pty(e,t){return new Sn(await e.createSocket(`shell:${t}`))}static async raw(e,t){return new Sn(await e.createSocket(`exec:${t}`))}get stdin(){return s(this,fe).writable}get stdout(){return s(this,fe).readable}get stderr(){return s(this,Yt)}get exit(){return s(this,Zt)}resize(){}async kill(){await s(this,fe).close()}};fe=new WeakMap,Yt=new WeakMap,Zt=new WeakMap;var lt=Sn;var x={ShellV2:"shell_v2",Cmd:"cmd",StatV2:"stat_v2",ListV2:"ls_v2",FixedPushMkdir:"fixed_push_mkdir",Abb:"abb",AbbExec:"abb_exec",SendReceiveV2:"sendrecv_v2",DelayedAck:"delayed_ack"};var dt={Stdin:0,Stdout:1,Stderr:2,Exit:3,CloseStdin:4,WindowSizeChange:5},En=b({id:as(),data:K(m)},{littleEndian:!0}),ht,ut,Qt,Jt,er,De,In=class In{constructor(e){a(this,ht);a(this,ut);a(this,Qt);a(this,Jt);a(this,er);a(this,De,new f);l(this,ht,e);let t,n;l(this,Jt,new q(i=>{t=i})),l(this,er,new q(i=>{n=i})),e.readable.pipeThrough(new wn(En)).pipeTo(new N({write:async i=>{switch(i.id){case dt.Exit:s(this,De).resolve(i.data[0]);break;case dt.Stdout:await t.enqueue(i.data);break;case dt.Stderr:await n.enqueue(i.data);break}}})).then(()=>{t.close(),n.close(),s(this,De).reject(new Error("Socket ended without exit message"))},i=>{t.error(i),n.error(i),s(this,De).reject(i)}),l(this,ut,s(this,ht).writable.getWriter()),l(this,Qt,new V.WritableStream({write:async i=>{await s(this,ut).write(En.serialize({id:dt.Stdin,data:i}))}}))}static isSupported(e){return e.canUseFeature(x.ShellV2)}static async pty(e,t){return new In(await e.createSocket(`shell,v2,pty:${t}`))}static async raw(e,t){return new In(await e.createSocket(`shell,v2,raw:${t}`))}get stdin(){return s(this,Qt)}get stdout(){return s(this,Jt)}get stderr(){return s(this,er)}get exit(){return s(this,De).promise}async resize(e,t){await s(this,ut).write(En.serialize({id:dt.WindowSizeChange,data:k(`${e}x${t},0x0\0`)}))}kill(){return s(this,ht).close()}};ht=new WeakMap,ut=new WeakMap,Qt=new WeakMap,Jt=new WeakMap,er=new WeakMap,De=new WeakMap;var Xt=In;var Io={protocols:[Xt,lt]},tr,oi,Le=class extends se{constructor(){super(...arguments);a(this,tr)}shell(t,n){return y(this,tr,oi).call(this,"pty",t,n)}spawn(t,n){return y(this,tr,oi).call(this,"raw",t,n)}async spawnAndWait(t,n){let i=await this.spawn(t,n),[o,c,d]=await Promise.all([i.stdout.pipeThrough(new $t).pipeThrough(new Re),i.stderr.pipeThrough(new $t).pipeThrough(new Re),i.exit]);return{stdout:o,stderr:c,exitCode:d}}async spawnAndWaitLegacy(t){let{stdout:n}=await this.spawnAndWait(t,{protocols:[lt]});return n}};tr=new WeakSet,oi=async function(t,n,i){let{protocols:o}={...Io,...i},c;for(let d of o)if(await d.isSupported(this.adb)){c=d;break}if(!c)throw new Error("No specified protocol is supported by the device");return Array.isArray(n)?n=n.join(" "):n===void 0&&(n=""),await c[t](this.adb,n)};function pt(r){let e="";e+="'";let t=0;for(;;){let n=r.indexOf("'",t);if(n===-1){e+=r.substring(t);break}e+=r.substring(t,n),e+=String.raw`'\''`,t=n+1}return e+="'",e}function vo(r){let e=new Uint8Array(r.length);for(let t=0;t<r.length;t+=1)e[t]=r.charCodeAt(t);return e}function S(r){let e=vo(r);return tt(e,0)}var z={Entry:S("DENT"),Entry2:S("DNT2"),Lstat:S("STAT"),Stat:S("STA2"),Lstat2:S("LST2"),Done:S("DONE"),Data:S("DATA"),Ok:S("OKAY"),Fail:S("FAIL")},vn=class extends Error{},ai=b({message:we(m)},{littleEndian:!0,postDeserialize(r){throw new vn(r.message)}});async function Pe(r,e,t){typeof e=="string"&&(e=S(e));let n=await r.readExactly(4);switch(tt(n,0)){case z.Fail:throw await ai.deserialize(r),new Error("Unreachable");case e:return await t.deserialize(r);default:throw new Error(`Expected '${e}', but got '${W(n)}'`)}}async function*Ue(r,e,t){for(typeof e=="string"&&(e=S(e));;){let n=await r.readExactly(4);switch(tt(n,0)){case z.Fail:throw await ai.deserialize(r),new Error("Unreachable");case z.Done:await r.readExactly(t.size);return;case e:yield await t.deserialize(r);break;default:throw new Error(`Expected '${e}' or '${z.Done}', but got '${W(n)}'`)}}}var D={List:S("LIST"),ListV2:S("LIS2"),Send:S("SEND"),SendV2:S("SND2"),Lstat:S("STAT"),Stat:S("STA2"),LstatV2:S("LST2"),Data:S("DATA"),Done:S("DONE"),Receive:S("RECV")},ci=b({id:m,arg:m},{littleEndian:!0});async function P(r,e,t){if(typeof e=="string"&&(e=S(e)),typeof t=="number"){await r.write(ci.serialize({id:e,arg:t}));return}typeof t=="string"&&(t=k(t)),await r.write(ci.serialize({id:e,arg:t.length})),await r.write(t)}var An={Directory:4,File:8,Link:10},rr=b({mode:m,size:m,mtime:m},{littleEndian:!0,extra:{get type(){return this.mode>>12},get permission(){return this.mode&4095}},postDeserialize(r){if(r.mode===0&&r.size===0&&r.mtime===0)throw new Error("lstat error");return r}}),kn={SUCCESS:0,EACCES:13,EEXIST:17,EFAULT:14,EFBIG:27,EINTR:4,EINVAL:22,EIO:5,EISDIR:21,ELOOP:40,EMFILE:24,ENAMETOOLONG:36,ENFILE:23,ENOENT:2,ENOMEM:12,ENOSPC:28,ENOTDIR:20,EOVERFLOW:75,EPERM:1,EROFS:30,ETXTBSY:26},Ao=Object.fromEntries(Object.entries(kn).map(([r,e])=>[e,r])),mt=b({error:m(),dev:ke,ino:ke,mode:m,nlink:m,uid:m,gid:m,size:ke,atime:ke,mtime:ke,ctime:ke},{littleEndian:!0,extra:{get type(){return this.mode>>12},get permission(){return this.mode&4095}},postDeserialize(r){if(r.error)throw new Error(Ao[r.error]);return r}});async function li(r,e,t){let n=await r.lock();try{if(t)return await P(n,D.LstatV2,e),await Pe(n,z.Lstat2,mt);{await P(n,D.Lstat,e);let i=await Pe(n,z.Lstat,rr);return{mode:i.mode,size:BigInt(i.size),mtime:BigInt(i.mtime),get type(){return i.type},get permission(){return i.permission}}}}finally{n.release()}}async function di(r,e){let t=await r.lock();try{return await P(t,D.Stat,e),await Pe(t,z.Stat,mt)}finally{t.release()}}var xs=b({...rr.fields,name:we(m)},{littleEndian:!0,extra:rr.extra}),fs=b({...mt.fields,name:we(m)},{littleEndian:!0,extra:mt.extra});async function*bs(r,e){let t=await r.lock();try{await P(t,D.ListV2,e);for await(let n of Ue(t,z.Entry2,fs))n.error===kn.SUCCESS&&(yield n)}finally{t.release()}}async function*Ss(r,e){let t=await r.lock();try{await P(t,D.List,e);for await(let n of Ue(t,z.Entry,xs))yield n}finally{t.release()}}async function*hi(r,e,t){if(t)yield*bs(r,e);else for await(let n of Ss(r,e))yield{mode:n.mode,size:BigInt(n.size),mtime:BigInt(n.mtime),get type(){return n.type},get permission(){return n.permission},name:n.name}}var ui=b({data:K(m)},{littleEndian:!0});async function*Es(r,e){let t=await r.lock(),n=!1;try{await P(t,D.Receive,e);for await(let i of Ue(t,z.Data,ui))yield i.data;n=!0}catch(i){throw n=!0,i}finally{if(!n)for await(let i of Ue(t,z.Data,ui));t.release()}}function pi(r,e){return new q(async t=>{for await(let n of Es(r,e))await t.enqueue(n)})}var wi=64*1024,Is=b({unused:m},{littleEndian:!0});async function vs(r,e,t,n){let i=new Q;e.pipeThrough(new un(t,!0)).pipeTo(new V.WritableStream({write(o){return P(r,D.Data,o)}}),{signal:i.signal}).then(async()=>{await P(r,D.Done,n),await r.flush()},ii),await Pe(r,z.Ok,Is).catch(o=>{throw i.abort(),o})}async function As({socket:r,filename:e,file:t,type:n=An.File,permission:i=438,mtime:o=Date.now()/1e3|0,packetSize:c=wi}){let d=await r.lock();try{let p=n<<12|i,h=`${e},${p.toString()}`;await P(d,D.Send,h),await vs(d,t,c,o)}finally{d.release()}}var mi={None:0,Brotli:1,Lz4:2,Zstd:4,DryRun:2147483648},ks=b({id:m,mode:m,flags:m()},{littleEndian:!0});async function Cs({socket:r,filename:e,file:t,type:n=An.File,permission:i=438,mtime:o=Date.now()/1e3|0,packetSize:c=wi,dryRun:d=!1}){let p=await r.lock();try{await P(p,D.SendV2,e);let h=n<<12|i,w=mi.None;d&&(w|=mi.DryRun),await p.write(ks.serialize({id:D.SendV2,mode:h,flags:w})),await vs(p,t,c,o)}finally{p.release()}}function yi(r){if(r.v2)return Cs(r);if(r.dryRun)throw new Error("dryRun is not supported in v1");return As(r)}var ir,_e,sr,We,qe,or,gi,Cn=class{constructor(e,t,n,i){a(this,or);a(this,ir);a(this,_e);a(this,sr);a(this,We,new ot);a(this,qe);l(this,ir,e),l(this,_e,t),l(this,sr,i),l(this,qe,new qt(n))}get position(){return s(this,_e).position}async flush(){try{await s(this,We).wait();let e=s(this,qe).flush();e&&await y(this,or,gi).call(this,e)}finally{s(this,We).notifyOne()}}async write(e){try{await s(this,We).wait();for(let t of s(this,qe).push(e))await y(this,or,gi).call(this,t)}finally{s(this,We).notifyOne()}}async readExactly(e){return await this.flush(),await s(this,_e).readExactly(e)}release(){s(this,qe).flush(),s(this,sr).notifyOne()}async close(){await s(this,_e).cancel()}};ir=new WeakMap,_e=new WeakMap,sr=new WeakMap,We=new WeakMap,qe=new WeakMap,or=new WeakSet,gi=function(e){return E.WritableStream.write(s(this,ir),e)};var ar,cr,wt,nr=class{constructor(e,t){a(this,ar,new ot);a(this,cr);a(this,wt);l(this,cr,e),l(this,wt,new Cn(e.writable.getWriter(),new O(e.readable),t,s(this,ar)))}async lock(){return await s(this,ar).wait(),s(this,wt)}async close(){await s(this,wt).close(),await s(this,cr).close()}};ar=new WeakMap,cr=new WeakMap,wt=new WeakMap;function Ns(r){let e=r.lastIndexOf("/");if(e===-1)throw new Error("Invalid path");return e===0?"/":r.substring(0,e)}var Oe,dr,hr,ur,pr,lr=class{constructor(e,t){u(this,"_adb");u(this,"_socket");a(this,Oe);a(this,dr);a(this,hr);a(this,ur);a(this,pr);this._adb=e,this._socket=new nr(t,e.maxPayloadSize),l(this,Oe,e.canUseFeature(x.StatV2)),l(this,dr,e.canUseFeature(x.ListV2)),l(this,hr,e.canUseFeature(x.FixedPushMkdir)),l(this,ur,e.canUseFeature(x.SendReceiveV2)),l(this,pr,this._adb.canUseFeature(x.ShellV2)&&!this.fixedPushMkdir)}get supportsStat(){return s(this,Oe)}get supportsListV2(){return s(this,dr)}get fixedPushMkdir(){return s(this,hr)}get supportsSendReceiveV2(){return s(this,ur)}get needPushMkdirWorkaround(){return s(this,pr)}async lstat(e){return await li(this._socket,e,s(this,Oe))}async stat(e){if(!s(this,Oe))throw new Error("Not supported");return await di(this._socket,e)}async isDirectory(e){try{return await this.lstat(e+"/"),!0}catch{return!1}}opendir(e){return hi(this._socket,e,this.supportsListV2)}async readdir(e){let t=[];for await(let n of this.opendir(e))t.push(n);return t}read(e){return pi(this._socket,e)}async write(e){this.needPushMkdirWorkaround&&await this._adb.subprocess.spawnAndWait(["mkdir","-p",pt(Ns(e.filename))]),await yi({v2:this.supportsSendReceiveV2,socket:this._socket,...e})}lockSocket(){return this._socket.lock()}dispose(){return this._socket.close()}};Oe=new WeakMap,dr=new WeakMap,hr=new WeakMap,ur=new WeakMap,pr=new WeakMap;function Rs(r){if(!(!r||r==="0"))return Number.parseInt(r,10)}var mr=class extends se{async getListenAddresses(){let e=await this.adb.getProp("service.adb.listen_addrs"),t=await this.adb.getProp("service.adb.tcp.port"),n=await this.adb.getProp("persist.adb.tcp.port");return{serviceListenAddresses:e!=""?e.split(","):[],servicePort:Rs(t),persistPort:Rs(n)}}async setPort(e){if(e<=0)throw new TypeError(`Invalid port ${e}`);let t=await this.adb.createSocketAndWait(`tcpip:${e}`);if(t!==`restarting in TCP mode port: ${e}
-`)throw new Error(t);return t}async disable(){let e=await this.adb.createSocketAndWait("usb:");if(e!==`restarting in USB mode
-`)throw new Error(e);return e}};var xi=class{constructor(e){u(this,"transport");u(this,"subprocess");u(this,"power");u(this,"reverse");u(this,"tcpip");this.transport=e,this.subprocess=new Le(this),this.power=new Kt(this),this.reverse=new Gt(this),this.tcpip=new mr(this)}get serial(){return this.transport.serial}get maxPayloadSize(){return this.transport.maxPayloadSize}get banner(){return this.transport.banner}get disconnected(){return this.transport.disconnected}get clientFeatures(){return this.transport.clientFeatures}get deviceFeatures(){return this.banner.features}canUseFeature(e){return this.clientFeatures.includes(e)&&this.deviceFeatures.includes(e)}async createSocket(e){return this.transport.connect(e)}async createSocketAndWait(e){return await(await this.createSocket(e)).readable.pipeThrough(new $t).pipeThrough(new Re)}async getProp(e){return(await this.subprocess.spawnAndWaitLegacy(["getprop",e])).trim()}async rm(e,t){let n=["rm"];if(t?.recursive&&n.push("-r"),t?.force&&n.push("-f"),Array.isArray(e))for(let o of e)n.push(pt(o));else n.push(pt(e));return n.push("</dev/null"),await this.subprocess.spawnAndWaitLegacy(n)}async sync(){let e=await this.createSocket("sync:");return new lr(this,e)}async framebuffer(){return ei(this)}async close(){await this.transport.close()}};var wr={Product:"ro.product.name",Model:"ro.product.model",Device:"ro.product.device",Features:"features"},yr,gr,xr,fr,fi=class fi{constructor(e,t,n,i){a(this,yr);a(this,gr);a(this,xr);a(this,fr,[]);l(this,yr,e),l(this,gr,t),l(this,xr,n),l(this,fr,i)}static parse(e){let t,n,i,o=[],c=e.split("::");if(c.length>1){let d=c[1];for(let p of d.split(";")){if(!p)continue;let h=p.split("=");if(h.length!==2)continue;let[w,g]=h;switch(w){case wr.Product:t=g;break;case wr.Model:n=g;break;case wr.Device:i=g;break;case wr.Features:o=g.split(",");break}}}return new fi(t,n,i,o)}get product(){return s(this,yr)}get model(){return s(this,gr)}get device(){return s(this,xr)}get features(){return s(this,fr)}};yr=new WeakMap,gr=new WeakMap,xr=new WeakMap,fr=new WeakMap;var Ve=fi;function Rn(r,e,t){let n=0n;for(let i=e;i<e+t;i+=8){n<<=64n;let o=is(r,i);n|=o}return n}function Tn(r,e,t,n,i){if(i)for(;n>0n;)Gi(r,e,n),e+=8,n>>=64n;else{let o=e+t-8;for(;n>0n;)Yi(r,o,n),o-=8,n>>=64n}}var ko=38,Co=2048/8,No=303,Ro=2048/8;function Ei(r){let e=Rn(r,ko,Co),t=Rn(r,No,Ro);return[e,t]}function Ts(r,e){let t=r%e;return t>0?t:t+(e>0?e:-e)}function zs(r,e){if(r=Ts(r,e),!r||e<2)return NaN;let t=[],n=e;for(;n;)[r,n]=[n,r%n],t.push({a:r,b:n});if(r!==1)return NaN;let i=1,o=0;for(let c=t.length-2;c>=0;c-=1)[i,o]=[o,i-o*Math.floor(t[c].a/t[c].b)];return Ts(o,e)}var Me=2048/8,To=Me/4;function zn(){return 8+Me+Me+4}function Ii(r,e){let t,n=zn();if(!e)e=new Uint8Array(n),t="Uint8Array";else{if(e.length<n)throw new TypeError("output buffer is too small");t="number"}let i=new DataView(e.buffer,e.byteOffset,e.length),o=0;i.setUint32(o,To,!0),o+=4;let[c]=Ei(r),d=-zs(Number(c%2n**32n),2**32);i.setInt32(o,d,!0),o+=4,Tn(e,o,Me,c,!0),o+=Me;let p=2n**4096n%c;return Tn(e,o,Me,p,!0),o+=Me,i.setUint32(o,65537,!0),o+=4,t==="Uint8Array"?e:n}function Bs(r,e,t){if(t===1n)return 0n;let n=1n;for(r=r%t;e>0n;)BigInt.asUintN(1,e)===1n&&(n=n*r%t),r=r*r%t,e>>=1n;return n}var bi=20,Si=48,Ds=4,Ls=5,Ps=6,Nn=new Uint8Array([Si,13+bi,Si,9,Ps,5,1*40+3,14,3,2,26,Ls,0,Ds,bi]);function vi(r,e){let[t,n]=Ei(r),i=new Uint8Array(256),o=0;i[o]=0,o+=1,i[o]=1,o+=1;let c=i.length-Nn.length-e.length-1;for(;o<c;)i[o]=255,o+=1;i[o]=0,o+=1,i.set(Nn,o),o+=Nn.length,i.set(e,o);let d=Bs(Rn(i,0,i.length),n,t);return Tn(i,0,i.length,d,!1),i}var A={Auth:1213486401,Close:1163086915,Connect:1314410051,Okay:1497451343,Open:1313165391,Write:1163154007},yt=b({command:m,arg0:m,arg1:m,payloadLength:m,checksum:m,magic:cs},{littleEndian:!0}),zo=b({...yt.fields,payload:K("payloadLength")},{littleEndian:!0});function Sr(r){return r.reduce((e,t)=>e+t,0)}var br=class extends an{constructor(){let e=new Uint8Array(yt.size);super({transform:async(t,n)=>{await t.tryConsume(async i=>{let o=i;o.payloadLength=o.payload.length,yt.serialize(o,e),await E.ReadableStream.enqueue(n,e),o.payloadLength&&await E.ReadableStream.enqueue(n,o.payload)})}})}};var Er={Token:1,Signature:2,PublicKey:3},Us=async function*(r,e){for await(let t of r.iterateKeys()){let n=await e();if(n.arg0!==Er.Token)return;let i=vi(t.buffer,n.payload);yield{command:A.Auth,arg0:Er.Signature,arg1:0,payload:i}}},_s=async function*(r,e){if((await e()).arg0!==Er.Token)return;let n;for await(let p of r.iterateKeys()){n=p;break}n||(n=await r.generateKey());let i=zn(),[o]=fn(i),c=n.name?.length?k(n.name):C,d=new Uint8Array(o+(c.length?c.length+1:0)+1);Ii(n.buffer,d),ri(d.subarray(0,i),d),c.length&&(d[o]=32,d.set(c,o+1)),yield{command:A.Auth,arg0:Er.PublicKey,arg1:0,payload:d}},Ai=[Us,_s],vr,gt,$e,Bn,Dn,Ws,Ir=class{constructor(e,t){a(this,Dn);u(this,"authenticators");a(this,vr);a(this,gt,new f);a(this,$e);a(this,Bn,()=>s(this,gt).promise);this.authenticators=e,l(this,vr,t)}async process(e){s(this,$e)||l(this,$e,y(this,Dn,Ws).call(this)),s(this,gt).resolve(e);let t=await s(this,$e).next();if(t.done)throw new Error("No authenticator can handle the request");return t.value}dispose(){s(this,$e)?.return?.()}};vr=new WeakMap,gt=new WeakMap,$e=new WeakMap,Bn=new WeakMap,Dn=new WeakSet,Ws=async function*(){for(let e of this.authenticators)for await(let t of e(s(this,vr),s(this,Bn)))l(this,gt,new f),yield t};var Fe,Ar,xt,kr,Cr,Nr,Rr,Ke,le,Pn,qs,ft=class{constructor(e){a(this,Pn);a(this,Fe);u(this,"localId");u(this,"remoteId");u(this,"localCreated");u(this,"service");a(this,Ar);a(this,xt);a(this,kr);u(this,"writable");a(this,Cr,!1);a(this,Nr,new f);a(this,Rr);a(this,Ke);a(this,le,0);l(this,Fe,e.dispatcher),this.localId=e.localId,this.remoteId=e.remoteId,this.localCreated=e.localCreated,this.service=e.service,l(this,Ar,new q(t=>{l(this,xt,t)})),this.writable=new V.WritableStream({start:t=>{l(this,kr,t),t.signal.addEventListener("abort",()=>{s(this,Ke)?.reject(t.signal.reason)})},write:async t=>{let n=t.length,i=s(this,Fe).options.maxPayloadSize;for(let o=0,c=i;o<n;o=c,c+=i){let d=t.subarray(o,c);await y(this,Pn,qs).call(this,d)}}}),l(this,Rr,new Ln(this)),l(this,le,e.availableWriteBytes)}get readable(){return s(this,Ar)}get closed(){return s(this,Nr).promise}get socket(){return s(this,Rr)}async enqueue(e){await s(this,xt).enqueue(e)}ack(e){l(this,le,s(this,le)+e),s(this,Ke)?.resolve()}async close(){if(!s(this,Cr)){l(this,Cr,!0),s(this,Ke)?.reject(new Error("Socket closed"));try{s(this,kr).error(new Error("Socket closed"))}catch{}await s(this,Fe).sendPacket(A.Close,this.localId,this.remoteId,C)}}dispose(){s(this,xt).close(),s(this,Nr).resolve()}};Fe=new WeakMap,Ar=new WeakMap,xt=new WeakMap,kr=new WeakMap,Cr=new WeakMap,Nr=new WeakMap,Rr=new WeakMap,Ke=new WeakMap,le=new WeakMap,Pn=new WeakSet,qs=async function(e){let t=e.length;for(;s(this,le)<t;){let n=new f;l(this,Ke,n),await n.promise}s(this,le)===1/0?l(this,le,-1):l(this,le,s(this,le)-t),await s(this,Fe).sendPacket(A.Write,this.localId,this.remoteId,e)};var $,Ln=class{constructor(e){a(this,$);l(this,$,e)}get localId(){return s(this,$).localId}get remoteId(){return s(this,$).remoteId}get localCreated(){return s(this,$).localCreated}get service(){return s(this,$).service}get readable(){return s(this,$).readable}get writable(){return s(this,$).writable}get closed(){return s(this,$).closed}close(){return s(this,$).close()}};$=new WeakMap;var be,Y,je,zr,bt,He,Br,L,Os,Vs,ki,Ms,$s,Ci,Tr=class{constructor(e,t){a(this,L);a(this,be,new sn(1));a(this,Y,new Map);a(this,je);u(this,"options");a(this,zr,!1);a(this,bt,new f);a(this,He,new Map);a(this,Br,new Q);this.options=t,this.options.initialDelayedAckBytes<0&&(this.options.initialDelayedAckBytes=0),e.readable.pipeTo(new N({write:async n=>{switch(n.command){case A.Close:await y(this,L,Os).call(this,n);break;case A.Okay:y(this,L,Vs).call(this,n);break;case A.Open:await y(this,L,Ms).call(this,n);break;case A.Write:await y(this,L,$s).call(this,n);break;default:throw new Error(`Unknown command: ${n.command.toString(16)}`)}}}),{preventCancel:t.preserveConnection??!1,signal:s(this,Br).signal}).then(()=>{y(this,L,Ci).call(this)},n=>{s(this,zr)||s(this,bt).reject(n),y(this,L,Ci).call(this)}),l(this,je,e.writable.getWriter())}get disconnected(){return s(this,bt).promise}async createSocket(e){this.options.appendNullToServiceString&&(e+="\0");let[t,n]=s(this,be).add();await this.sendPacket(A.Open,t,this.options.initialDelayedAckBytes,e);let{remoteId:i,availableWriteBytes:o}=await n,c=new ft({dispatcher:this,localId:t,remoteId:i,localCreated:!0,service:e,availableWriteBytes:o});return s(this,Y).set(t,c),c.socket}addReverseTunnel(e,t){s(this,He).set(e,t)}removeReverseTunnel(e){s(this,He).delete(e)}clearReverseTunnels(){s(this,He).clear()}async sendPacket(e,t,n,i){if(typeof i=="string"&&(i=k(i)),i.length>this.options.maxPayloadSize)throw new TypeError("payload too large");await E.WritableStream.write(s(this,je),{command:e,arg0:t,arg1:n,payload:i,checksum:this.options.calculateChecksum?Sr(i):0,magic:e^4294967295})}async close(){await Promise.all(Array.from(s(this,Y).values(),e=>e.close())),l(this,zr,!0),s(this,Br).abort(),this.options.preserveConnection?s(this,je).releaseLock():await s(this,je).close()}};be=new WeakMap,Y=new WeakMap,je=new WeakMap,zr=new WeakMap,bt=new WeakMap,He=new WeakMap,Br=new WeakMap,L=new WeakSet,Os=async function(e){if(e.arg0===0&&s(this,be).reject(e.arg1,new Error("Socket open failed")))return;let t=s(this,Y).get(e.arg1);if(t){await t.close(),t.dispose(),s(this,Y).delete(e.arg1);return}},Vs=function(e){let t;if(this.options.initialDelayedAckBytes!==0){if(e.payload.length!==4)throw new Error("Invalid OKAY packet. Payload size should be 4");t=tt(e.payload,0)}else{if(e.payload.length!==0)throw new Error("Invalid OKAY packet. Payload size should be 0");t=1/0}if(s(this,be).resolve(e.arg1,{remoteId:e.arg0,availableWriteBytes:t}))return;let n=s(this,Y).get(e.arg1);if(n){n.ack(t);return}this.sendPacket(A.Close,e.arg1,e.arg0,C)},ki=function(e,t,n){let i;return this.options.initialDelayedAckBytes!==0?(i=new Uint8Array(4),ts(i,0,n)):i=C,this.sendPacket(A.Okay,e,t,i)},Ms=async function(e){let[t]=s(this,be).add();s(this,be).resolve(t,void 0);let n=e.arg0,i=e.arg1,o=W(e.payload);if(o.endsWith("\0")&&(o=o.substring(0,o.length-1)),this.options.initialDelayedAckBytes===0){if(i!==0)throw new Error("Invalid OPEN packet. arg1 should be 0");i=1/0}else if(i===0)throw new Error("Invalid OPEN packet. arg1 should be greater than 0");let c=s(this,He).get(o);if(!c){await this.sendPacket(A.Close,0,n,C);return}let d=new ft({dispatcher:this,localId:t,remoteId:n,localCreated:!1,service:o,availableWriteBytes:i});try{await c(d.socket),s(this,Y).set(t,d),await y(this,L,ki).call(this,t,n,this.options.initialDelayedAckBytes)}catch{await this.sendPacket(A.Close,0,n,C)}},$s=async function(e){let t=s(this,Y).get(e.arg1);if(!t)throw new Error(`Unknown local socket id: ${e.arg1}`);let n=!1,i=[(async()=>{await t.enqueue(e.payload),await y(this,L,ki).call(this,e.arg1,e.arg0,e.payload.length),n=!0})()];this.options.readTimeLimit&&i.push((async()=>{if(await Mi(this.options.readTimeLimit),!n)throw new Error(`readable of \`${t.service}\` has stalled for ${this.options.readTimeLimit} milliseconds`)})()),await Promise.race(i)},Ci=function(){for(let e of s(this,Y).values())e.dispose();s(this,bt).resolve()};var Fs=16777217,Ni=[x.ShellV2,x.Cmd,x.StatV2,x.ListV2,x.FixedPushMkdir,"apex",x.Abb,"fixed_push_symlink_timestamp",x.AbbExec,"remount_shell","track_app",x.SendReceiveV2,"sendrecv_v2_brotli","sendrecv_v2_lz4","sendrecv_v2_zstd","sendrecv_v2_dry_run_send",x.DelayedAck],Ks=32*1024*1024,Lr,Z,Pr,Ur,St,_r,Ri=class Ri{constructor({serial:e,connection:t,version:n,banner:i,features:o=Ni,initialDelayedAckBytes:c,...d}){a(this,Lr);a(this,Z);a(this,Pr);a(this,Ur);a(this,St);a(this,_r);if(l(this,Pr,e),l(this,Lr,t),l(this,St,Ve.parse(i)),l(this,_r,o),o.includes(x.DelayedAck)){if(c<=0)throw new TypeError("`initialDelayedAckBytes` must be greater than 0 when DelayedAck feature is enabled.");s(this,St).features.includes(x.DelayedAck)||(c=0)}else c=0;let p,h;n>=Fs?(p=!1,h=!1):(p=!0,h=!0),l(this,Z,new Tr(t,{calculateChecksum:p,appendNullToServiceString:h,initialDelayedAckBytes:c,...d})),l(this,Ur,n)}static async authenticate({serial:e,connection:t,credentialStore:n,authenticators:i=Ai,features:o=Ni,initialDelayedAckBytes:c=Ks,...d}){let p=16777217,h=1024*1024,w=new f,g=new Ir(i,n),I=new Q,T=t.readable.pipeTo(new N({async write(B){switch(B.command){case A.Connect:p=Math.min(p,B.arg0),h=Math.min(h,B.arg1),w.resolve(W(B.payload));break;case A.Auth:{let so=await g.process(B);await Wi(so);break}default:break}}}),{preventCancel:!0,signal:I.signal}).then(()=>{w.reject(new Error("Connection closed unexpectedly"))},B=>{w.reject(B)}),nn=t.writable.getWriter();async function Wi(B){B.checksum=Sr(B.payload),B.magic=B.command^4294967295,await E.WritableStream.write(nn,B)}let $n=o.slice();if(c<=0){let B=o.indexOf(x.DelayedAck);B!==-1&&$n.splice(B,1)}let qi;try{await Wi({command:A.Connect,arg0:p,arg1:h,payload:k(`host::features=${$n.join(",")}`)}),qi=await w.promise}finally{I.abort(),nn.releaseLock(),await T}return new Ri({serial:e,connection:t,version:p,maxPayloadSize:h,banner:qi,features:$n,initialDelayedAckBytes:c,...d})}get connection(){return s(this,Lr)}get serial(){return s(this,Pr)}get protocolVersion(){return s(this,Ur)}get maxPayloadSize(){return s(this,Z).options.maxPayloadSize}get banner(){return s(this,St)}get disconnected(){return s(this,Z).disconnected}get clientFeatures(){return s(this,_r)}connect(e){return s(this,Z).createSocket(e)}addReverseTunnel(e,t){return t||(t=`localabstract:reverse_${Math.random().toString().substring(2)}`),s(this,Z).addReverseTunnel(t,e),t}removeReverseTunnel(e){s(this,Z).removeReverseTunnel(e)}clearReverseTunnels(){s(this,Z).clearReverseTunnels()}close(){return s(this,Z).close()}};Lr=new WeakMap,Z=new WeakMap,Pr=new WeakMap,Ur=new WeakMap,St=new WeakMap,_r=new WeakMap;var Dr=Ri;function js(r,e){r[e]=r[r.length-1],r.length-=1}var qr,Et,X,de,Hs,Gs,Ti,Wr=class{constructor(e){a(this,de);u(this,"current",[]);a(this,qr);a(this,Et);a(this,X,[]);l(this,qr,e)}async createObserver(e){if(e?.signal?.aborted)throw e.signal.reason;s(this,Et)??l(this,Et,y(this,de,Gs).call(this));let t=await s(this,Et);if(e?.signal?.aborted)throw await y(this,de,Ti).call(this,t),e.signal.reason;let n=new G,i=new G,o=new G,c=new G,d={onDeviceAdd:n,onDeviceRemove:i,onListChange:o,onError:c};s(this,X).push(d);let p=new jt(e),h=async()=>{let g=s(w,X).indexOf(d);g!==-1&&(js(s(this,X),g),await y(this,de,Ti).call(this,t),p.unref())};e?.signal?.addEventListener("abort",()=>void h());let w=this;return{onDeviceAdd:n.event,onDeviceRemove:i.event,onListChange:o.event,onError:c.event,get current(){return w.current},stop:h}}};qr=new WeakMap,Et=new WeakMap,X=new WeakMap,de=new WeakSet,Hs=async function(e){try{for(;;){let t=await e.readString(),n=Ge.parseDeviceList(t),i=[];for(let o of n){let c=this.current.findIndex(d=>d.transportId===o.transportId);if(c===-1){i.push(o);continue}js(this.current,c)}if(i.length)for(let o of s(this,X))o.onDeviceAdd.fire(i);if(this.current.length)for(let o of s(this,X))o.onDeviceRemove.fire(this.current);this.current=n;for(let o of s(this,X))o.onListChange.fire(this.current)}}catch(t){for(let n of s(this,X))n.onError.fire(t)}},Gs=async function(){let e=await s(this,qr).createConnection("host:track-devices-l",{unref:!0});return y(this,de,Hs).call(this,e),e},Ti=async function(e){s(this,X).length===0&&(l(this,Et,void 0),await e.dispose())};var Bo=k("OKAY"),Un=k("FAIL"),Se,Ee,Ye,It=class{constructor(e){a(this,Se);a(this,Ee);a(this,Ye);u(this,"readString",v(function*(e){let t=yield*e(this.readExactly(4)),n=ce(t);if(n===0)return"";{let i=new Hn,o="",c=s(this,Ee).iterateExactly(n);for(;;){let{done:d,value:p}=c.next();if(d)break;o+=i.decode(yield*e(p),{stream:!0})}return o+=i.decode(),o}}));l(this,Se,e),l(this,Ee,new O(e.readable)),l(this,Ye,e.writable.getWriter())}readExactly(e){return s(this,Ee).readExactly(e)}async readOkay(){let e=await this.readExactly(4);if(!xe(e,Bo)){if(xe(e,Un)){let t=await this.readString();throw new Error(t)}throw new Error(`Unexpected response: ${W(e)}`)}}async writeString(e){let t=k(e),n=new Uint8Array(4+t.length);ni(n,0,t.length),n.set(t,4),await s(this,Ye).write(n)}release(){return s(this,Ye).releaseLock(),{readable:s(this,Ee).release(),writable:s(this,Se).writable,closed:s(this,Se).closed,close:()=>s(this,Se).close()}}async dispose(){ln(s(this,Ee)),cn(s(this,Ye)),await s(this,Se).close()}};Se=new WeakMap,Ee=new WeakMap,Ye=new WeakMap;var Ys=[x.ShellV2,x.Cmd,x.StatV2,x.ListV2,x.FixedPushMkdir,"apex",x.Abb,"fixed_push_symlink_timestamp",x.AbbExec,"remount_shell","track_app",x.SendReceiveV2,"sendrecv_v2_brotli","sendrecv_v2_lz4","sendrecv_v2_zstd","sendrecv_v2_dry_run_send"],Ie,vt,Vr,Mr,Or=class{constructor(e,t,n,i,o){a(this,Ie);u(this,"serial");u(this,"transportId");u(this,"maxPayloadSize",1*1024*1024);u(this,"banner");a(this,vt,[]);a(this,Vr,new f);a(this,Mr);l(this,Ie,e),this.serial=t,this.banner=n,this.transportId=i,l(this,Mr,Promise.race([s(this,Vr).promise,o]))}get disconnected(){return s(this,Mr)}get clientFeatures(){return Ys}async connect(e){let t=await s(this,Ie).createDeviceConnection({transportId:this.transportId},e);return s(this,vt).push(t),t}async addReverseTunnel(e,t){return await s(this,Ie).connector.addReverseTunnel(e,t)}async removeReverseTunnel(e){await s(this,Ie).connector.removeReverseTunnel(e)}async clearReverseTunnels(){await s(this,Ie).connector.clearReverseTunnels()}async close(){for(let e of s(this,vt))await e.close();s(this,vt).length=0,s(this,Vr).resolve()}};Ie=new WeakMap,vt=new WeakMap,Vr=new WeakMap,Mr=new WeakMap;var _n,$r,zi,Ze=class Ze{constructor(e){a(this,$r);u(this,"connector");u(this,"wireless",new Ze.WirelessCommands(this));u(this,"mDns",new Ze.MDnsCommands(this));a(this,_n,new Wr(this));this.connector=e}static parseDeviceList(e){let t=[];for(let n of e.split(`
-`)){if(!n)continue;let i=n.split(" ").filter(Boolean),o=i[0],c=i[1];if(c!=="device"&&c!=="unauthorized")continue;let d,p,h,w;for(let g=2;g<i.length;g+=1){let[I,T]=i[g].split(":");switch(I){case"product":d=T;break;case"model":p=T;break;case"device":h=T;break;case"transport_id":w=BigInt(T);break}}if(!w)throw new Error(`No transport id for device ${o}`);t.push({serial:o,authenticating:c==="unauthorized",product:d,model:p,device:h,transportId:w})}return t}static formatDeviceService(e,t){if(!e)return`host:${t}`;if("transportId"in e)return`host-transport-id:${e.transportId}:${t}`;if("serial"in e)return`host-serial:${e.serial}:${t}`;if("usb"in e)return`host-usb:${t}`;if("tcp"in e)return`host-local:${t}`;throw new TypeError("Invalid device selector")}async createConnection(e,t){let n=await this.connector.connect(t),i=new It(n);try{await i.writeString(e)}catch(o){throw await i.dispose(),o}try{return await Zs(()=>i.readOkay(),t?.signal),i}catch(o){throw await i.dispose(),o}}async getVersion(){let e=await this.createConnection("host:version");try{let t=ce(await e.readExactly(4));return ce(await e.readExactly(t))}finally{await e.dispose()}}async validateVersion(e){let t=await this.getVersion();if(t<e)throw new Error(`adb server version (${t}) doesn't match this client (${e})`)}async killServer(){await(await this.createConnection("host:kill")).dispose()}async getServerFeatures(){let e=await this.createConnection("host:host-features");try{return(await e.readString()).split(",")}finally{await e.dispose()}}async getDevices(){let e=await this.createConnection("host:devices-l");try{let t=await e.readString();return Ze.parseDeviceList(t)}finally{await e.dispose()}}async trackDevices(e){return s(this,_n).createObserver(e)}async reconnectDevice(e){let t=await this.createConnection(e==="offline"?"host:reconnect-offline":Ze.formatDeviceService(e,"reconnect"));try{await t.readString()}finally{await t.dispose()}}async getDeviceFeatures(e){let t=await this.createDeviceConnection(e,"host:features"),n=new It(t);try{let o=(await n.readString()).split(",");return{transportId:t.transportId,features:o}}finally{await n.dispose()}}async createDeviceConnection(e,t){let n,i;if(!e)await this.validateVersion(41),n="host:tport:any";else if("transportId"in e)n=`host:transport-id:${e.transportId}`,i=e.transportId;else if("serial"in e)await this.validateVersion(41),n=`host:tport:serial:${e.serial}`;else if("usb"in e)await this.validateVersion(41),n="host:tport:usb";else if("tcp"in e)await this.validateVersion(41),n="host:tport:local";else throw new TypeError("Invalid device selector");let o=await this.createConnection(n);try{await o.writeString(t)}catch(c){throw await o.dispose(),c}try{if(i===void 0){let d=await o.readExactly(8);i=ns(d,0)}await o.readOkay();let c=o.release();return{transportId:i,service:t,readable:c.readable,writable:c.writable,get closed(){return c.closed},async close(){await c.close()}}}catch(c){throw await o.dispose(),c}}async waitFor(e,t,n){return t==="disconnect"&&await this.validateVersion(41),y(this,$r,zi).call(this,e,t,n)}async waitForDisconnect(e,t){if(await this.getVersion()>=41)return y(this,$r,zi).call(this,{transportId:e},"disconnect",t);{let i=await this.trackDevices(t);return new Promise((o,c)=>{i.onDeviceRemove(d=>{d.some(p=>p.transportId===e)&&(i.stop(),o())}),i.onError(d=>{i.stop(),c(d)})})}}async createTransport(e){let{transportId:t,features:n}=await this.getDeviceFeatures(e),o=(await this.getDevices()).find(w=>w.transportId===t),c=new Ve(o?.product,o?.model,o?.device,n),d=new Q,p=this.waitForDisconnect(t,{unref:!0,signal:d.signal}),h=new Or(this,o?.serial??"",c,t,p);return h.disconnected.then(()=>d.abort(),()=>d.abort()),h}};_n=new WeakMap,$r=new WeakSet,zi=async function(e,t,n){let i;if(!e)i="any";else if("transportId"in e)i="any";else if("serial"in e)i="any";else if("usb"in e)i="usb";else if("tcp"in e)i="local";else throw new TypeError("Invalid device selector");let o=Ze.formatDeviceService(e,`wait-for-${i}-${t}`),c=await this.createConnection(o,n);try{await c.readOkay()}finally{await c.dispose()}};var Ge=Ze;async function Zs(r,...e){let t=new f;function n(){t.reject(this.reason)}try{for(let i of e)if(i){if(i.aborted)throw i.reason;i.addEventListener("abort",n)}return await Promise.race([r(),t.promise])}finally{for(let i of e)i&&i.removeEventListener("abort",n)}}(function(r){var c,d;class e extends Error{constructor(h){super(h),this.name="NetworkError"}}r.NetworkError=e;class t extends Error{constructor(h){super(h),this.name="UnauthorizedError"}}r.UnauthorizedError=t;class n extends Error{constructor(h){super(h),this.name="AlreadyConnectedError"}}r.AlreadyConnectedError=n;class i{constructor(h){a(this,c);l(this,c,h)}async pair(h,w){let g=await s(this,c).createConnection(`host:pair:${w}:${h}`);try{let I=await g.readExactly(4);if(xe(I,Un))throw new Error(await g.readString());let T=ce(I);await g.readExactly(T)}finally{await g.dispose()}}async connect(h){let w=await s(this,c).createConnection(`host:connect:${h}`);try{let g=await w.readString();switch(g){case`already connected to ${h}`:throw new r.AlreadyConnectedError(g);case`failed to connect to ${h}`:case`failed to authenticate to ${h}`:throw new r.UnauthorizedError(g);case`connected to ${h}`:return;default:throw new r.NetworkError(g)}}finally{await w.dispose()}}async disconnect(h){let w=await s(this,c).createConnection(`host:disconnect:${h}`);try{await w.readString()}finally{await w.dispose()}}}c=new WeakMap,r.WirelessCommands=i;class o{constructor(h){a(this,d);l(this,d,h)}async check(){let h=await s(this,d).createConnection("host:mdns:check");try{return!(await h.readString()).startsWith("ERROR:")}finally{await h.dispose()}}async getServices(){let h=await s(this,d).createConnection("host:mdns:services");try{return(await h.readString()).split(`
-`).filter(Boolean).map(g=>{let I=g.split("	");return{name:I[0],service:I[1],address:I[2]}})}finally{await h.dispose()}}}d=new WeakMap,r.MDnsCommands=o})(Ge||(Ge={}));var _i={};Fn(_i,{AdbDaemonWebUsbConnection:()=>qn,AdbDaemonWebUsbDevice:()=>J,AdbDaemonWebUsbDeviceManager:()=>Ui,AdbDaemonWebUsbDeviceObserver:()=>Qr,AdbDefaultInterfaceFilter:()=>Fr,findUsbEndpoints:()=>Di,findUsbInterface:()=>Js,getSerialNumber:()=>Wn,isErrorName:()=>At,isUsbInterfaceFilter:()=>Qs,matchFilter:()=>eo,matchFilters:()=>Xe,mergeDefaultAdbInterfaceFilter:()=>kt});function At(r,e){return typeof r=="object"&&r!==null&&"name"in r&&r.name===e}function Qs(r){return r.classCode!==void 0&&r.subclassCode!==void 0&&r.protocolCode!==void 0}function Do(r,e){return r.interfaceClass===e.classCode&&r.interfaceSubclass===e.subclassCode&&r.interfaceProtocol===e.protocolCode}function Js(r,e){for(let t of r.configurations)for(let n of t.interfaces)for(let i of n.alternates)if(Do(i,e))return{configuration:t,interface_:n,alternate:i}}function Xs(r){return r.toString(16).padStart(4,"0")}function Wn(r){return r.serialNumber?r.serialNumber:Xs(r.vendorId)+"x"+Xs(r.productId)}function Di(r){if(r.length===0)throw new TypeError("No endpoints given");let e,t;for(let n of r)switch(n.direction){case"in":if(e=n,t)return{inEndpoint:e,outEndpoint:t};break;case"out":if(t=n,e)return{inEndpoint:e,outEndpoint:t};break}throw e?t?new Error("unreachable"):new TypeError("No output endpoint found."):new TypeError("No input endpoint found.")}function eo(r,e){return e.vendorId!==void 0&&r.vendorId!==e.vendorId||e.productId!==void 0&&r.productId!==e.productId||e.serialNumber!==void 0&&Wn(r)!==e.serialNumber?!1:Qs(e)?Js(r,e)||!1:!0}function Xe(r,e,t){if(t&&t.length>0&&Xe(r,t))return!1;for(let n of e){let i=eo(r,n);if(i)return i}return!1}var Fr={classCode:255,subclassCode:66,protocolCode:1};function kt(r){return!r||r.length===0?[Fr]:r.map(e=>({...e,classCode:e.classCode??Fr.classCode,subclassCode:e.subclassCode??Fr.subclassCode,protocolCode:e.protocolCode??Fr.protocolCode}))}var Kr,ve,Li=class{constructor(e){a(this,Kr);a(this,ve);l(this,Kr,e),l(this,ve,0)}get position(){return s(this,ve)}readExactly(e){let t=s(this,Kr).subarray(s(this,ve),s(this,ve)+e);return l(this,ve,s(this,ve)+e),t}};Kr=new WeakMap,ve=new WeakMap;var Qe,Ae,jr,Hr,Gr,On,to,qn=class{constructor(e,t,n,i){a(this,On);a(this,Qe);a(this,Ae);a(this,jr);a(this,Hr);a(this,Gr);l(this,Qe,e),l(this,Ae,t),l(this,jr,n);let o=!1,c=new mn({close:async()=>{try{o=!0,await e.raw.close()}catch{}},dispose:()=>{o=!0,i.removeEventListener("disconnect",d)}});function d(h){h.device===e.raw&&c.dispose().catch(si)}i.addEventListener("disconnect",d),l(this,Hr,c.wrapReadable(new U({pull:async h=>{let w=await y(this,On,to).call(this);w?h.enqueue(w):h.close()}},{highWaterMark:0})));let p=n.packetSize-1;l(this,Gr,ms(c.createWritable(new V.WritableStream({write:async h=>{try{await e.raw.transferOut(n.endpointNumber,h),p&&!(h.length&p)&&await e.raw.transferOut(n.endpointNumber,C)}catch(w){if(o)return;throw w}}})),new br))}get device(){return s(this,Qe)}get inEndpoint(){return s(this,Ae)}get outEndpoint(){return s(this,jr)}get readable(){return s(this,Hr)}get writable(){return s(this,Gr)}};Qe=new WeakMap,Ae=new WeakMap,jr=new WeakMap,Hr=new WeakMap,Gr=new WeakMap,On=new WeakSet,to=async function(){try{for(;;){let e=await s(this,Qe).raw.transferIn(s(this,Ae).endpointNumber,s(this,Ae).packetSize);if(e.data.byteLength!==24)continue;let t=new Uint8Array(e.data.buffer),n=new Li(t),i=yt.deserialize(n);if(i.magic===(i.command^4294967295)){if(i.payloadLength!==0){let o=await s(this,Qe).raw.transferIn(s(this,Ae).endpointNumber,i.payloadLength);i.payload=new Uint8Array(o.data.buffer)}else i.payload=C;return i}}}catch(e){if(At(e,"NetworkError")&&(await new Promise(t=>{setTimeout(()=>{t()},100)}),closed))return;throw e}};var Yr,Zr,F,Xr,Vn,ro,Pi=class Pi{constructor(e,t,n){a(this,Vn);a(this,Yr);a(this,Zr);a(this,F);a(this,Xr);l(this,F,e),l(this,Xr,Wn(e)),l(this,Yr,t),l(this,Zr,n)}get raw(){return s(this,F)}get serial(){return s(this,Xr)}get name(){return s(this,F).productName}async connect(){let{inEndpoint:e,outEndpoint:t}=await y(this,Vn,ro).call(this);return new qn(this,e,t,s(this,Zr))}};Yr=new WeakMap,Zr=new WeakMap,F=new WeakMap,Xr=new WeakMap,Vn=new WeakSet,ro=async function(){s(this,F).opened||await s(this,F).open();let{configuration:e,interface_:t,alternate:n}=s(this,Yr);if(s(this,F).configuration?.configurationValue!==e.configurationValue&&await s(this,F).selectConfiguration(e.configurationValue),!t.claimed)try{await s(this,F).claimInterface(t.interfaceNumber)}catch(i){throw At(i,"NetworkError")?new Pi.DeviceBusyError(i):i}return t.alternate.alternateSetting!==n.alternateSetting&&await s(this,F).selectAlternateInterface(t.interfaceNumber,n.alternateSetting),Di(n.endpoints)};var J=Pi;(function(r){class e extends Error{constructor(n){super("The device is already in used by another program",{cause:n})}}r.DeviceBusyError=e})(J||(J={}));var Jr,en,he,Ct,Nt,Je,tn,rn,Qr=class{constructor(e,t={}){a(this,Jr);a(this,en);a(this,he);a(this,Ct,new G);u(this,"onDeviceAdd",s(this,Ct).event);a(this,Nt,new G);u(this,"onDeviceRemove",s(this,Nt).event);a(this,Je,new G);u(this,"onListChange",s(this,Je).event);u(this,"current",[]);a(this,tn,e=>{let t=Xe(e.device,s(this,Jr),s(this,en));if(!t)return;let n=new J(e.device,t,s(this,he));s(this,Ct).fire([n]),this.current.push(n),s(this,Je).fire(this.current)});a(this,rn,e=>{let t=this.current.findIndex(n=>n.raw===e.device);if(t!==-1){let n=this.current[t];s(this,Nt).fire([n]),this.current[t]=this.current[this.current.length-1],this.current.length-=1,s(this,Je).fire(this.current)}});l(this,Jr,kt(t.filters)),l(this,en,t.exclusionFilters),l(this,he,e),s(this,he).addEventListener("connect",s(this,tn)),s(this,he).addEventListener("disconnect",s(this,rn))}stop(){s(this,he).removeEventListener("connect",s(this,tn)),s(this,he).removeEventListener("disconnect",s(this,rn)),s(this,Ct).dispose(),s(this,Nt).dispose(),s(this,Je).dispose()}};Jr=new WeakMap,en=new WeakMap,he=new WeakMap,Ct=new WeakMap,Nt=new WeakMap,Je=new WeakMap,tn=new WeakMap,rn=new WeakMap;var ue,Mn=class Mn{constructor(e){a(this,ue);l(this,ue,e)}async requestDevice(e={}){let t=kt(e.filters);try{let n=await s(this,ue).requestDevice({filters:t,exclusionFilters:e.exclusionFilters}),i=Xe(n,t,e.exclusionFilters);return i?new J(n,i,s(this,ue)):void 0}catch(n){if(At(n,"NotFoundError"))return;throw n}}async getDevices(e={}){let t=kt(e.filters),n=await s(this,ue).getDevices(),i=[];for(let o of n){let c=Xe(o,t,e.exclusionFilters);c&&i.push(new J(o,c,s(this,ue)))}return i}trackDevices(e={}){return new Qr(s(this,ue),e)}};ue=new WeakMap,u(Mn,"BROWSER",typeof globalThis.navigator<"u"&&globalThis.navigator.usb?new Mn(globalThis.navigator.usb):void 0);var Ui=Mn;function no(){return new Promise((r,e)=>{let t=indexedDB.open("Tango",1);t.onerror=()=>{e(t.error)},t.onupgradeneeded=()=>{t.result.createObjectStore("Authentication",{autoIncrement:!0})},t.onsuccess=()=>{let n=t.result;r(n)}})}async function Lo(r){let e=await no();return new Promise((t,n)=>{let i=e.transaction("Authentication","readwrite"),c=i.objectStore("Authentication").add(r);c.onerror=()=>{n(c.error)},c.onsuccess=()=>{t()},i.onerror=()=>{n(i.error)},i.oncomplete=()=>{e.close()}})}async function Po(){let r=await no();return new Promise((e,t)=>{let n=r.transaction("Authentication","readonly"),o=n.objectStore("Authentication").getAll();o.onerror=()=>{t(o.error)},o.onsuccess=()=>{e(o.result)},n.onerror=()=>{t(n.error)},n.oncomplete=()=>{r.close()}})}var Rt,Tt=class{constructor(e="Tango"){a(this,Rt);l(this,Rt,e)}async generateKey(){let{privateKey:e}=await crypto.subtle.generateKey({name:"RSASSA-PKCS1-v1_5",modulusLength:2048,publicExponent:new Uint8Array([1,0,1]),hash:"SHA-1"},!0,["sign","verify"]),t=new Uint8Array(await crypto.subtle.exportKey("pkcs8",e));return await Lo(t),{buffer:t,name:`${s(this,Rt)}@${globalThis.location.hostname}`}}async*iterateKeys(){for(let e of await Po())yield{buffer:e,name:`${s(this,Rt)}@${globalThis.location.hostname}`}}};Rt=new WeakMap;var Uo={..._i,AdbDaemonTransport:Dr},io=Le.prototype;Object.getOwnPropertyDescriptor(io,"noneProtocol")||Object.defineProperty(io,"noneProtocol",{configurable:!0,get(){return this._tangoNoneProtocol||(this._tangoNoneProtocol={spawnWaitText:async r=>(await this.spawnAndWait(r)).stdout}),this._tangoNoneProtocol}});globalThis.TangoADB={Adb:Bi,AdbDaemonWebUsb:Uo,AdbCredentialWeb:{AdbCredentialStore:Tt,AdbWebCredentialStore:Tt}};})();
-
+window.TangoADB = {
+  Adb,
+  AdbDaemonWebUsb,
+  AdbCredentialWeb,
+  StreamExtra
+};
+console.log('Tango ADB 模块CDN加载完毕',Object.keys(window.TangoADB));
 </script>
-
-<!-- 一机一码激活遮罩 -->
-<div id="activation-overlay">
-    <div class="activation-card">
-        <div style="font-size:30px;line-height:1">🚗</div>
-        <h2 class="ac-title">车机ADB工具箱</h2>
-        <p class="ac-sub">本工具为设备授权使用 · 一机一码</p>
-        <div class="activation-machine">
-            <div class="ac-label">本机机器码（请发送给作者换取激活码）</div>
-            <div id="machine-code">计算中...</div>
-        </div>
-        <input id="activation-input" placeholder="输入激活码，如 AAAA-BBBB-CCCC-DDDD" autocomplete="off">
-        <button id="activation-btn" onclick="activateTool()">激 活</button>
-        <div id="activation-error"></div>
-        <div class="activation-note">激活后本机本浏览器有效期 15 天，到期需重新输入激活码；更换浏览器或电脑需重新激活</div>
-    </div>
-</div>
 </body>
 </html>
